@@ -24,51 +24,51 @@ class Visitor
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="text")
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $nom;
+    private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="text")
+     * @ORM\Column(name="first_name", type="string", length=255)
      */
-    private $prenom;
+    private $firstName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="date", type="string", length=255)
+     * @ORM\Column(name="birth_date", type="date", length=255)
      */
-    private $date;
+    private $birthDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="billet", type="string", length=255)
+     * @ORM\Column(name="ticket", type="string", length=255)
      */
-    private $billet;
+    private $ticket;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="reservation", type="string", length=255)
+     * @ORM\Column(name="booking", type="string", length=255)
      */
-    private $reservation;
+    private $booking;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type_billet", type="string", length=255)
+     * @ORM\Column(name="admission_type", type="string", length=255)
      */
-    private $typeBillet;
+    private $admissionType;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="tarif_reduit", type="boolean")
+     * @ORM\Column(name="reduced_price", type="boolean", length=255)
      */
-    private $tarifReduit;
+    private $reducedPrice;
 
 
     /**
@@ -82,171 +82,171 @@ class Visitor
     }
 
     /**
-     * Set nom
+     * Set name
      *
-     * @param string $nom
+     * @param string $name
      *
      * @return Visitor
      */
-    public function setNom($nom)
+    public function setName($name)
     {
-        $this->nom = $nom;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get name
      *
      * @return string
      */
-    public function getNom()
+    public function getName()
     {
-        return $this->nom;
+        return $this->name;
     }
 
     /**
-     * Set prenom
+     * Set firstName
      *
-     * @param string $prenom
+     * @param string $firstName
      *
      * @return Visitor
      */
-    public function setPrenom($prenom)
+    public function setFirstName($firstName)
     {
-        $this->prenom = $prenom;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     /**
-     * Get prenom
+     * Get firstName
      *
      * @return string
      */
-    public function getPrenom()
+    public function getFirstName()
     {
-        return $this->prenom;
+        return $this->firstName;
     }
 
     /**
-     * Set date
+     * Set birthDate
      *
-     * @param string $date
+     * @param string $birthDate
      *
      * @return Visitor
      */
-    public function setDate($date)
+    public function setBirthDate($birthDate)
     {
-        $this->date = $date;
+        $this->birthDate = $birthDate;
 
         return $this;
     }
 
     /**
-     * Get date
+     * Get birthDate
      *
      * @return string
      */
-    public function getDate()
+    public function getBirthDate()
     {
-        return $this->date;
+        return $this->birthDate;
     }
 
     /**
-     * Set billet
+     * Set ticket
      *
-     * @param string $billet
+     * @param string $ticket
      *
      * @return Visitor
      */
-    public function setBillet($billet)
+    public function setTicket($ticket)
     {
-        $this->billet = $billet;
+        $this->ticket = $ticket;
 
         return $this;
     }
 
     /**
-     * Get billet
+     * Get ticket
      *
      * @return string
      */
-    public function getBillet()
+    public function getTicket()
     {
-        return $this->billet;
+        return $this->ticket;
     }
 
     /**
-     * Set reservation
+     * Set booking
      *
-     * @param string $reservation
+     * @param string $booking
      *
      * @return Visitor
      */
-    public function setReservation($reservation)
+    public function setBooking($booking)
     {
-        $this->reservation = $reservation;
+        $this->booking = $booking;
 
         return $this;
     }
 
     /**
-     * Get reservation
+     * Get booking
      *
      * @return string
      */
-    public function getReservation()
+    public function getBooking()
     {
-        return $this->reservation;
+        return $this->booking;
     }
 
     /**
-     * Set typeBillet
+     * Set admissionType
      *
-     * @param string $typeBillet
+     * @param string $admissionType
      *
      * @return Visitor
      */
-    public function setTypeBillet($typeBillet)
+    public function setAdmissionType($admissionType)
     {
-        $this->typeBillet = $typeBillet;
+        $this->admissionType = $admissionType;
 
         return $this;
     }
 
     /**
-     * Get typeBillet
+     * Get admissionType
      *
      * @return string
      */
-    public function getTypeBillet()
+    public function getAdmissionType()
     {
-        return $this->typeBillet;
+        return $this->admissionType;
     }
 
     /**
-     * Set tarifReduit
+     * Set reducedPrice
      *
-     * @param boolean $tarifReduit
+     * @param string $reducedPrice
      *
      * @return Visitor
      */
-    public function setTarifReduit($tarifReduit)
+    public function setReducedPrice($reducedPrice)
     {
-        $this->tarifReduit = $tarifReduit;
+        $this->reducedPrice = $reducedPrice;
 
         return $this;
     }
 
     /**
-     * Get tarifReduit
+     * Get reducedPrice
      *
-     * @return bool
+     * @return string
      */
-    public function getTarifReduit()
+    public function getReducedPrice()
     {
-        return $this->tarifReduit;
+        return $this->reducedPrice;
     }
 }
 

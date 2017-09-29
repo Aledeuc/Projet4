@@ -22,9 +22,9 @@ class Day
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime", unique=true)
+     * @ORM\Column(name="date", type="date", length=255)
      */
     private $date;
 
@@ -36,11 +36,11 @@ class Day
     private $place;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="complet", type="boolean")
+     * @ORM\Column(name="full", type="boolean", length=255)
      */
-    private $complet;
+    private $full;
 
 
     /**
@@ -56,7 +56,7 @@ class Day
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param string $date
      *
      * @return Day
      */
@@ -70,7 +70,7 @@ class Day
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -102,27 +102,27 @@ class Day
     }
 
     /**
-     * Set complet
+     * Set full
      *
-     * @param boolean $complet
+     * @param string $full
      *
      * @return Day
      */
-    public function setComplet($complet)
+    public function setFull($full)
     {
-        $this->complet = $complet;
+        $this->full = $full;
 
         return $this;
     }
 
     /**
-     * Get complet
+     * Get full
      *
-     * @return bool
+     * @return string
      */
-    public function getComplet()
+    public function getFull()
     {
-        return $this->complet;
+        return $this->full;
     }
 }
 
