@@ -1,0 +1,51 @@
+{# app/Resources/views/layout.html.twig #}
+
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% block title %}Musée du Louvre{% endblock %}</title>
+
+        {% block stylesheets %} 
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% endblock %}
+    </head>
+
+    <body>   
+        <div class="topSite">
+            <a href="{{ path('oc_booking_homepage') }}">
+                <img src="{{ asset('images/logo_44.png') }}"  class="logoLouvre" alt="logomuseedulouvre">
+            </a> 
+
+                <div class="reseauxsociaux">
+                    <a href="https://twitter.com/museelouvre" class="btn btn-social-icon btn-twitter">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+
+                    <a href="https://www.facebook.com/museedulouvre" class="btn btn-social-icon btn-facebook">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </div>
+        </div>
+
+
+        <div id="content" class="col-lg-12">
+            {% block body %} {% endblock %}
+        </div>
+        
+        {% block javascripts %} 
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% endblock %}
+
+        <footer>
+            <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
+        </footer>
+    </body>
+</html>

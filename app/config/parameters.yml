@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 8889
+    database_name: louvre
+    database_user: adm
+    database_password: adm
+    mailer_transport: smtp
+    mailer_host: smtp-mail.outlook.com
+    mailer_user: ahirschmuller@outlook.com
+    mailer_password: 11CaRo11!
+    mailer_encryption: tls
+    mailer_port: 587
+    secret: d05bbd5c56dcb863ce145929fb0f54c67dcff7c4

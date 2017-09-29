@@ -1,0 +1,16 @@
+{# src/OC/BookingBundle/Resources/views/layout.html.twig #} 
+
+{% extends "::layout.html.twig" %} 
+
+{% block title %} 
+
+    {{ parent() }} 
+
+{% endblock %}
+
+{% block body %}
+
+    {% block ocbooking_body %}
+    {% endblock %} 
+   
+{% endblock %}

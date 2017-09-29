@@ -1,0 +1,22 @@
+{# src/OC/BookingBundle/Resources/views/Home/index.html.twig #} 
+
+{% extends "OCBookingBundle::layout.html.twig" %} 
+
+{% block title %} Accueil - {{ parent () }} {% endblock %} 
+
+{% block ocbooking_body %} 
+
+<div class="photoCentral">
+    <img src="{{ asset('images/museedulouvrev2.png') }}"  class="photomusee" alt="photomuseedulouvre">
+</div>
+
+<div id="bookingButton" class="col-lg-12">
+    <a href="{{ path('oc_booking_form') }}" class="btn btn-lg btn-booking">Réservation</a>
+</div> 
+
+{% block javascripts %} 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('js/animationHome.js') }}"></script>
+{% endblock %}
+
+{% endblock %}

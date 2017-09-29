@@ -1,0 +1,155 @@
+/*  Layout général */
+
+.translate
+{
+    position: relative;
+    right: 500px;
+}
+
+.reseauxsociaux
+{
+    position: absolute;
+    top: 10px; 
+    right: 30px;
+}
+
+.btn-twitter, .btn-facebook 
+{
+    color: #FFFFFF !important; 
+    background-color: #000205 !important; 
+    border-color: #000205 !important; 
+    -moz-border-radius:0px 0;
+    -webkit-border-radius:0px 0;
+    border-radius:0px 0;
+}
+
+html 
+{
+    height: 100%;
+}
+
+body
+{
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5em;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+    /* Logo Louvre home */
+
+.topSite
+{
+    text-align: center;
+}
+
+.logoLouvre
+{
+    width: 350px;
+    top: 10px;
+}
+
+/* Home page */
+
+    /* Home image */
+    
+.photoCentral
+{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    height: 482px;
+    bottom: 0;  
+}
+.photomusee 
+{
+    max-width:149%;
+	max-height:100%;
+}
+
+/* Booking button */
+
+.btn-booking { 
+    color: #FFFFFF; 
+    background-color: #000205; 
+    border-color: #000205; 
+  } 
+   
+  .btn-booking:hover, 
+  .btn-booking:focus, 
+  .btn-booking:active, 
+  .btn-booking.active, 
+  .open .dropdown-toggle.btn-booking { 
+    color: #FFFFFF; 
+    background-color: #000205; 
+    border-color: #000205; 
+  } 
+   
+  .btn-booking:active, 
+  .btn-booking.active, 
+  .open .dropdown-toggle.btn-booking { 
+    background-image: none; 
+  } 
+   
+  .btn-booking.disabled, 
+  .btn-booking[disabled], 
+  fieldset[disabled] .btn-booking, 
+  .btn-booking.disabled:hover, 
+  .btn-booking[disabled]:hover, 
+  fieldset[disabled] .btn-booking:hover, 
+  .btn-booking.disabled:focus, 
+  .btn-booking[disabled]:focus, 
+  fieldset[disabled] .btn-booking:focus, 
+  .btn-booking.disabled:active, 
+  .btn-booking[disabled]:active, 
+  fieldset[disabled] .btn-booking:active, 
+  .btn-booking.disabled.active, 
+  .btn-booking[disabled].active, 
+  fieldset[disabled] .btn-booking.active { 
+    background-color: #000205; 
+    border-color: #000205; 
+  } 
+   
+  .btn-booking .badge { 
+    color: #000205; 
+    background-color: #FFFFFF; 
+  }
+
+  .btn-booking
+  {
+    position : absolute;
+    font-family: Georgia, sans-serif;
+    font-size: 30px;
+    border: none;
+    -moz-border-radius:0px 0;
+    -webkit-border-radius:0px 0;
+    border-radius:0px 0;
+  }
+
+  #bookingButton
+  {
+    text-align: center;
+    bottom: -36em;
+    right: 90px;
+  }
+
+
+  /* booking form */
+
+  .well
+  {
+      background-color: #3c3c3c;
+      color: white;
+      margin-top: 50px;
+  }
+  /* footer */
+
+  footer
+  {
+    position: absolute;
+    bottom: 0;
+}
