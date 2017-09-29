@@ -31,16 +31,23 @@ class Visitor
     /**
      * @var string
      *
-     * @ORM\Column(name="first_name", type="string", length=255)
+     * @ORM\Column(name="firstname", type="string", length=255)
      */
-    private $firstName;
+    private $firstname;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birthdate", type="date")
+     */
+    private $birthdate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="birth_date", type="date", length=255)
+     * @ORM\Column(name="country", type="string", length=255)
      */
-    private $birthDate;
+    private $country;
 
     /**
      * @var string
@@ -52,21 +59,14 @@ class Visitor
     /**
      * @var string
      *
-     * @ORM\Column(name="booking", type="string", length=255)
-     */
-    private $booking;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="admission_type", type="string", length=255)
      */
     private $admissionType;
 
     /**
-     * @var string
+     * @var bool
      *
-     * @ORM\Column(name="reduced_price", type="boolean", length=255)
+     * @ORM\Column(name="reduced_price", type="boolean")
      */
     private $reducedPrice;
 
@@ -106,51 +106,75 @@ class Visitor
     }
 
     /**
-     * Set firstName
+     * Set firstname
      *
-     * @param string $firstName
+     * @param string $firstname
      *
      * @return Visitor
      */
-    public function setFirstName($firstName)
+    public function setFirstname($firstname)
     {
-        $this->firstName = $firstName;
+        $this->firstname = $firstname;
 
         return $this;
     }
 
     /**
-     * Get firstName
+     * Get firstname
      *
      * @return string
      */
-    public function getFirstName()
+    public function getFirstname()
     {
-        return $this->firstName;
+        return $this->firstname;
     }
 
     /**
-     * Set birthDate
+     * Set birthdate
      *
-     * @param string $birthDate
+     * @param \DateTime $birthdate
      *
      * @return Visitor
      */
-    public function setBirthDate($birthDate)
+    public function setBirthdate($birthdate)
     {
-        $this->birthDate = $birthDate;
+        $this->birthdate = $birthdate;
 
         return $this;
     }
 
     /**
-     * Get birthDate
+     * Get birthdate
+     *
+     * @return \DateTime
+     */
+    public function getBirthdate()
+    {
+        return $this->birthdate;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     *
+     * @return Visitor
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
      *
      * @return string
      */
-    public function getBirthDate()
+    public function getCountry()
     {
-        return $this->birthDate;
+        return $this->country;
     }
 
     /**
@@ -175,30 +199,6 @@ class Visitor
     public function getTicket()
     {
         return $this->ticket;
-    }
-
-    /**
-     * Set booking
-     *
-     * @param string $booking
-     *
-     * @return Visitor
-     */
-    public function setBooking($booking)
-    {
-        $this->booking = $booking;
-
-        return $this;
-    }
-
-    /**
-     * Get booking
-     *
-     * @return string
-     */
-    public function getBooking()
-    {
-        return $this->booking;
     }
 
     /**
@@ -228,7 +228,7 @@ class Visitor
     /**
      * Set reducedPrice
      *
-     * @param string $reducedPrice
+     * @param boolean $reducedPrice
      *
      * @return Visitor
      */
@@ -242,7 +242,7 @@ class Visitor
     /**
      * Get reducedPrice
      *
-     * @return string
+     * @return bool
      */
     public function getReducedPrice()
     {
