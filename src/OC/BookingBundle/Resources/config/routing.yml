@@ -12,4 +12,4 @@ oc_booking_homepageEn:
 
 oc_booking_form:
     path:    /museedulouvre.fr/billeterie
-    defaults: { _controller: OCBookingBundle:Admission:form }
+    defaults: { _controller: OCBookingBundle:Bookingform:form }

@@ -1,0 +1,93 @@
+{# src/OC/BookingBundle/Resources/views/Bookingform/form.html.twig #} 
+
+{% extends "OCBookingBundle::layout.html.twig" %}
+
+{% block title %}{{ parent () }} - Boutique{% endblock %}
+
+{% block body %}
+
+<div class="well">
+{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+{{ form_errors(form) }}
+
+    <div class="form-group">
+
+        {# Visit day #} 
+        {{ form_label(form.bookingDate, "Date de la visite", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+        {{ form_errors(form.bookingDate) }}
+        <div class="col-sm-3">
+            {{ form_widget(form.bookingDate) }}
+        </div>
+
+        {# Visitor Number #} 
+        {{ form_label(form.nbVisitor, "Nombre de visiteur", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+        {{ form_errors(form.nbVisitor) }}   
+        <div class="col-sm-1">
+            {{ form_widget(form.nbVisitor, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        {# Booking type #} 
+        {{ form_label(form.bookingType, "Type de réservation", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+        {{ form_errors(form.bookingType) }}   
+        <div class="col-sm-1">
+            {{ form_widget(form.bookingType, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+  
+
+    <div class="dynamicForm">
+
+        <div class="form-group">
+            {# Name #} 
+            {{ form_label(form.name, "Nom", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.name) }}  
+            <div class="col-sm-1">
+                {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            
+            {# First Name #}
+            {{ form_label(form.firstName, "Prénom", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.firstName) }}
+            <div class="col-sm-1">
+                {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            {# Country #}
+            {{ form_label(form.country, "Pays", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.country) }}
+            <div class="col-sm-1">
+                {{ form_widget(form.country, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            
+            {# Birthday #}
+            {{ form_label(form.birthDate, "Date d'anniversaire", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.birthDate) }}
+            <div class="col-sm-3">
+                {{ form_widget(form.birthDate) }}
+            </div>
+
+            {# Reduce #}
+            {{ form_label(form.reduce, "Réduction", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.reduce) }}
+            <div class="col-sm-1">
+                {{ form_widget(form.reduce) }}
+            </div>
+        </div>
+    </div>
+
+ 
+{{ form_rest(form) }}
+        
+
+{{ form_end(form) }}
+
+{{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+</div>
+
+{% endblock %}
+
+
+

@@ -50,20 +50,6 @@ class Visitor
     private $country;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="ticket", type="string", length=255)
-     */
-    private $ticket;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="admission_type", type="string", length=255)
-     */
-    private $admissionType;
-
-    /**
      * @var bool
      *
      * @ORM\Column(name="reduced_price", type="boolean")
@@ -176,55 +162,7 @@ class Visitor
     {
         return $this->country;
     }
-
-    /**
-     * Set ticket
-     *
-     * @param string $ticket
-     *
-     * @return Visitor
-     */
-    public function setTicket($ticket)
-    {
-        $this->ticket = $ticket;
-
-        return $this;
-    }
-
-    /**
-     * Get ticket
-     *
-     * @return string
-     */
-    public function getTicket()
-    {
-        return $this->ticket;
-    }
-
-    /**
-     * Set admissionType
-     *
-     * @param string $admissionType
-     *
-     * @return Visitor
-     */
-    public function setAdmissionType($admissionType)
-    {
-        $this->admissionType = $admissionType;
-
-        return $this;
-    }
-
-    /**
-     * Get admissionType
-     *
-     * @return string
-     */
-    public function getAdmissionType()
-    {
-        return $this->admissionType;
-    }
-
+    
     /**
      * Set reducedPrice
      *
