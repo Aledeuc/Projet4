@@ -3,6 +3,7 @@
 namespace OC\BookingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Visitor
@@ -55,6 +56,7 @@ class Visitor
      * @ORM\Column(name="reduced_price", type="boolean")
      */
     private $reducedPrice;
+
 
 
     /**
@@ -186,5 +188,5 @@ class Visitor
     {
         return $this->reducedPrice;
     }
-}
 
+}

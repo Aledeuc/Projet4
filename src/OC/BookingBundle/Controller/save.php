@@ -86,3 +86,9 @@ class BookingController extends Controller
 
 }
 
+public function __construct()
+{
+    $this->bookingDate = new \Datetime();
+    $this->categories  = new ArrayCollection();
+    $this->applications = new ArrayCollection();
+}

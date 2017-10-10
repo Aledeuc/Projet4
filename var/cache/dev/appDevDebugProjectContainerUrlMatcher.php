@@ -126,7 +126,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             // oc_booking_form
             if ('/museedulouvre.fr/billeterie' === $pathinfo) {
-                return array (  '_controller' => 'OCBookingBundle:Bookingform:form',  '_route' => 'oc_booking_form',);
+                return array (  '_controller' => 'OC\\BookingBundle\\Controller\\BookingformController::formAction',  '_route' => 'oc_booking_form',);
             }
 
         }
