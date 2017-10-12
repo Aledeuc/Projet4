@@ -5,7 +5,8 @@
 namespace OC\BookingBundle\Controller;
 
 use OC\BookingBundle\Entity\Bookingform;
-use OC\BookingBundle\Form\VisitorType;
+use OC\BookingBundle\Entity\Visitor;
+use OC\BookingBundle\Form\BookingformType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -23,53 +24,19 @@ class BookingformController extends Controller
     {
        $bookingform = new Bookingform();
 
-
-       $builder = $this->createFormBuilder($bookingform);
-
-        $builder
-            ->add('bookingDate',      DateType::class)
-            ->add('nbVisitor',        TextType::class)
-            ->add('ticketType',      ChoiceType::class, array(
-                'choices'  => array(
-                    'Journée' => 'full',
-                    'Demi-journée' => 'half',
-                )))
-            ->add('bookingemail',   TextType::class)
-               
-        // Add Visitor collection
-
-            ->add('visitors', CollectionType::class, array(
-                'entry_type'   => VisitorType::class,
-                'allow_add' => true,
-                'allow_delete' => true,
-                'prototype' => true,
-            ))
-
-            ->add('save', SubmitType::class, array('label' => 'Réserver'))
-            ;
-            
-
-
-        $form = $builder->getForm();
-
+        $form = $this->createForm(BookingformType::class, $bookingform );
+        
         $form->handleRequest($request);
-  
-        if ($form->isSubmitted() && $form->isValid()) {
-      
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
             $bookingform = $form->getData();
-  
             $em = $this->getDoctrine()->getManager();
             $em->persist($bookingform);
             $em->flush();
-  
-            //  return $this->redirectToRoute('task_success');
-          }
-        
-         
-        return $this->render('OCBookingBundle:Bookingform:form.html.twig', array(
+        }
+            return $this->render('OCBookingBundle:Bookingform:form.html.twig', array(
             'form' => $form->createView(),
-
-          ));
+            ));
     }
 }
 

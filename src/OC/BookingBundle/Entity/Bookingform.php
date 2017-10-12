@@ -3,6 +3,7 @@
 namespace OC\BookingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
@@ -52,11 +53,11 @@ class Bookingform
      */
     private $bookingEmail;
 
-      /**
+    /**
      * @var Visitor
      * 
      * @Assert\Valid()
-     * @ORM\OneToMany(targetEntity="Visitor", mappedBy="bookingform", cascade="all", orphanRemoval=true)
+     * @ORM\ManyToMany(targetEntity="OC\BookingBundle\Entity\Visitor",  cascade={"persist"})
      */
     private $visitors;
 
@@ -66,7 +67,7 @@ class Bookingform
      */
     public function __construct()
     {
-        $this->visitors = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->visitors = new ArrayCollection();
     }
 
     /**

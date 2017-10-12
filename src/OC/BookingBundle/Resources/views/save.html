@@ -1,0 +1,92 @@
+<div class="well">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        
+        {{ form_errors(form) }}
+        
+            <div class="form-group">
+        
+                {# Visit day #} 
+                {{ form_label(form.bookingDate, "Date de la visite", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+                {{ form_errors(form.bookingDate) }}
+                <div class="col-sm-3">
+                    {{ form_widget(form.bookingDate) }}
+                </div>
+        
+                {# Visitor Number #} 
+                {{ form_label(form.nbVisitor, "Nombre de visiteur", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+                {{ form_errors(form.nbVisitor) }}   
+                <div class="col-sm-1">
+                    {{ form_widget(form.nbVisitor, {'attr': {'class': 'form-control'}}) }}
+                </div>
+        
+                {# Booking type #} 
+                {{ form_label(form.ticketType, "Type de réservation", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+                {{ form_errors(form.ticketType) }}   
+                <div class="col-sm-1">
+                    {{ form_widget(form.ticketType, {'attr': {'class': 'form-control'}}) }}
+                </div>
+        
+                {# Booking email #} 
+                {{ form_label(form.bookingemail, "Email de réservation", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+                {{ form_errors(form.bookingemail) }}   
+                <div class="col-sm-1">
+                    {{ form_widget(form.bookingemail, {'attr': {'class': 'form-control'}}) }}
+                </div>
+        
+            </div>
+        
+            <div class="dynamicForm">
+                {% for Visitor in form.visitors %}
+                <ul class="visitors" data-prototype="{{ form_widget(form.tags.vars.prototype)|e('html_attr') }}">
+                    ...
+                
+                     <div class="form-group">
+                        {# Name #} 
+                        {{ form_label(Visitor.name, "Nom", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+                        {{ form_errors(Visitor.name) }}  
+                        <div class="col-sm-1">
+                            {{ form_widget(form.visitors.vars.prototype.name)|e }}
+                            {{ form_widget(Visitor.name, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </ul>
+                    {% endfor %}
+                       
+                
+            </div>
+                
+     
+
+{# First Name #}
+{{ form_label(visitor.firstname, "Prénom", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+{{ form_errors(visitor.firstname) }}
+<div class="col-sm-1">
+    {{ form_widget(visitor.firstname, {'attr': {'class': 'form-control'}}) }}
+</div>
+  
+{# Country #}
+{{ form_label(visitor.country, "Pays", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+{{ form_errors(visitor.country) }}
+<div class="col-sm-1">
+    {{ form_widget(visitor.country, {'attr': {'class': 'form-control'}}) }}
+</div>
+    
+{# Birthday #}
+{{ form_label(visitor.birthdate, "Date d'anniversaire", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+{{ form_errors(visitor.birthdate) }}
+<div class="col-sm-3">
+    {{ form_widget(visitor.birthdate) }}
+</div>
+
+{# Reduce #}
+{{ form_label(visitor.reducedPrice, "Réduction", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+{{ form_errors(visitor.reducedPrice) }}
+<div class="col-sm-1">
+    {{ form_widget(visitor.reducedPrice) }}
+</div>
+</div>
+
+
+{{ form_rest(form) }}
+
+
+{{ form_end(form) }}

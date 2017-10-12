@@ -4,9 +4,14 @@
 
 namespace OC\BookingBundle\Form;
 
+use BookingBundle\Entity\Visitor;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
 
 class VisitorType extends AbstractType
 {
@@ -16,11 +21,11 @@ class VisitorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('name')
-        ->add('firstname')
-        ->add('birthdate')
-        ->add('country')
-        ->add('reducedPrice');
+        ->add('name',       TextType::class)
+        ->add('firstname',      TextType::class)
+        ->add('birthdate',      DateType::class)
+        ->add('country',      TextType::class)
+        ->add('reducedPrice',      CheckboxType::class);
     }
     
     /**
