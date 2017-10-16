@@ -1,11 +1,5 @@
 /*  Layout général */
 
-.translate
-{
-    position: relative;
-    right: 500px;
-}
-
 .reseauxsociaux
 {
     position: absolute;
@@ -30,13 +24,15 @@ html
 
 body
 {
+    display : table;
+    width: 100%;
     position: relative;
     min-height: 100%;
     margin: 0;
     padding: 0;
     padding-bottom: 5em;
     -moz-box-sizing: border-box; 
-    box-sizing: border-box;
+    box-sizing: border-box;  
 }
 
     /* Logo Louvre home */
@@ -73,10 +69,18 @@ body
 
 /* Booking button */
 
-.btn-booking { 
+.btn-booking 
+{ 
     color: #FFFFFF; 
     background-color: #000205; 
     border-color: #000205; 
+    position : absolute;
+    font-family: Georgia, sans-serif;
+    font-size: 30px;
+    border: none;
+    -moz-border-radius:0px 0;
+    -webkit-border-radius:0px 0;
+    border-radius:0px 0;
   } 
    
   .btn-booking:hover, 
@@ -119,17 +123,6 @@ body
     background-color: #FFFFFF; 
   }
 
-  .btn-booking
-  {
-    position : absolute;
-    font-family: Georgia, sans-serif;
-    font-size: 30px;
-    border: none;
-    -moz-border-radius:0px 0;
-    -webkit-border-radius:0px 0;
-    border-radius:0px 0;
-  }
-
   #bookingButton
   {
     text-align: center;
@@ -146,10 +139,29 @@ body
       color: white;
       margin-top: 50px;
   }
+
+  .saveButton, .addVisitor, .removeVisitor
+  {
+    font-family: Georgia, sans-serif;
+    font-size: 20px;
+    border: none;
+    -moz-border-radius:0px 0;
+    -webkit-border-radius:0px 0;
+    border-radius:0px 0;
+    color: #FFFFFF; 
+    background-color: #000205; 
+    border-color: #000205;
+  }
+
+  ul li
+  {
+    text-decoration: none;
+  }
   /* footer */
 
   footer
   {
     position: absolute;
     bottom: 0;
+    display : table-row;
 }

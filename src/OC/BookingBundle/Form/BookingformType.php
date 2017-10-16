@@ -22,16 +22,18 @@ class BookingformType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('bookingDate',      DateType::class)
-            ->add('nbVisitor',        TextType::class)
+            ->add('bookingDate',      DateType::class, array(
+                'label'    => 'Date de la visite'))
             ->add('ticketType',      ChoiceType::class, array(
+                'label' =>  'Type de ticket',
                 'choices'  => array(
                     'Journée' => 'full',
                     'Demi-journée' => 'half',
                 )))
-            ->add('bookingemail',   TextType::class)
+            ->add('bookingemail',   TextType::class, array(
+                'label'    => 'Email'));
 
-            ->add('visitors', CollectionType::class, array(
+            $builder->add('visitors', CollectionType::class, array(
                 'entry_type' => VisitorType::class,
                 'entry_options' => array('label' => false),
                 'allow_add' => true,
@@ -39,7 +41,10 @@ class BookingformType extends AbstractType
 
            
 
-            ->add('save', SubmitType::class, array('label' => 'Réserver'));
+            ->add('save', SubmitType::class, array(
+                'label' => 'Réserver',
+                'attr' => array(
+                'class' =>  'saveButton')));
     }
     
     /**

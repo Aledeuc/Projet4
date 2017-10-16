@@ -6,19 +6,54 @@
 
 {% block body %}
 
-{{ form_start(form) }}
+<div class="well">
 
-{% for visitor in form.visitors %}
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {{ form_errors(form) }}
     
-    {{ form_row(visitor.firstname) }}
-	
-{% endfor %}
+        <div class="form-group">
+    
+            {# Visit day #} 
+            {{ form_label(form.bookingDate, "Date de la visite", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.bookingDate) }}
+            <div class="col-sm-3">
+                {{ form_widget(form.bookingDate) }}
+            </div>
+    
+            {# Booking type #} 
+            {{ form_label(form.ticketType, "Type de réservation", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.ticketType) }}   
+            <div class="col-sm-1">
+                {{ form_widget(form.ticketType, {'attr': {'class': 'form-control'}}) }}
+            </div>
+    
+            {# Booking email #} 
+            {{ form_label(form.bookingemail, "Email de réservation", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
+            {{ form_errors(form.bookingemail) }}   
+            <div class="col-sm-2">
+                {{ form_widget(form.bookingemail, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            
+        </div>
+        
+        <div>
+        
+        <h3>Visiteurs</h3>
 
-{{ form_end(form) }}
+        <ul class="visitors" data-prototype="{{ form_widget(form.visitors.vars.prototype)|e('html_attr') }}"></ul>
+            
+        <button href="#" class="addVisitor">Ajouter un visiteur</button>
+        </div>
+
+    {{ form_row(form.save) }} 
+</div>
 
 
 {% block javascripts %} 
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('js/bookingFormulaire.js') }}"></script>
+<script src="https://js.stripe.com/v3/"></script>
 {% endblock %}
 
 {% endblock %}

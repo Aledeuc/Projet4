@@ -24,6 +24,11 @@ class BookingformController extends Controller
     {
        $bookingform = new Bookingform();
 
+       $visitor = new Visitor();
+
+       $visitor->setName('');
+       $bookingform->getVisitors()->add($visitor);
+       
         $form = $this->createForm(BookingformType::class, $bookingform );
         
         $form->handleRequest($request);
