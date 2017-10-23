@@ -23,48 +23,48 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_459e6c5af402b520804417edc7c399719ff5e0585841f3ca7c846cdeb8f3ab0b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_459e6c5af402b520804417edc7c399719ff5e0585841f3ca7c846cdeb8f3ab0b->enter($__internal_459e6c5af402b520804417edc7c399719ff5e0585841f3ca7c846cdeb8f3ab0b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
+        $__internal_15694419b71d97a55fbfa91a2554ec5c1c9a06cc131dfdd0a56b1fbe99d333e7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_15694419b71d97a55fbfa91a2554ec5c1c9a06cc131dfdd0a56b1fbe99d333e7->enter($__internal_15694419b71d97a55fbfa91a2554ec5c1c9a06cc131dfdd0a56b1fbe99d333e7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
 
-        $__internal_ee0aedd9c329f301e200bad3c620871d0ba5daffc2d134d2efd576080ba480ad = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ee0aedd9c329f301e200bad3c620871d0ba5daffc2d134d2efd576080ba480ad->enter($__internal_ee0aedd9c329f301e200bad3c620871d0ba5daffc2d134d2efd576080ba480ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
+        $__internal_b3405fc63d24f4cf9a558674cfc37169e0f33f174b48c9c6a76c073c44e970f7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b3405fc63d24f4cf9a558674cfc37169e0f33f174b48c9c6a76c073c44e970f7->enter($__internal_b3405fc63d24f4cf9a558674cfc37169e0f33f174b48c9c6a76c073c44e970f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_459e6c5af402b520804417edc7c399719ff5e0585841f3ca7c846cdeb8f3ab0b->leave($__internal_459e6c5af402b520804417edc7c399719ff5e0585841f3ca7c846cdeb8f3ab0b_prof);
+        $__internal_15694419b71d97a55fbfa91a2554ec5c1c9a06cc131dfdd0a56b1fbe99d333e7->leave($__internal_15694419b71d97a55fbfa91a2554ec5c1c9a06cc131dfdd0a56b1fbe99d333e7_prof);
 
         
-        $__internal_ee0aedd9c329f301e200bad3c620871d0ba5daffc2d134d2efd576080ba480ad->leave($__internal_ee0aedd9c329f301e200bad3c620871d0ba5daffc2d134d2efd576080ba480ad_prof);
+        $__internal_b3405fc63d24f4cf9a558674cfc37169e0f33f174b48c9c6a76c073c44e970f7->leave($__internal_b3405fc63d24f4cf9a558674cfc37169e0f33f174b48c9c6a76c073c44e970f7_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_3c1889055a1e56f3c0bd1de5bf111dcf7aa33ddc684cd121cd2a17e441deb812 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3c1889055a1e56f3c0bd1de5bf111dcf7aa33ddc684cd121cd2a17e441deb812->enter($__internal_3c1889055a1e56f3c0bd1de5bf111dcf7aa33ddc684cd121cd2a17e441deb812_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_e44550e66cdea33021beb4ea3cd51a741195bb7b50afcddb0a6e1a6d759b2296 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e44550e66cdea33021beb4ea3cd51a741195bb7b50afcddb0a6e1a6d759b2296->enter($__internal_e44550e66cdea33021beb4ea3cd51a741195bb7b50afcddb0a6e1a6d759b2296_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_f51801e11d916779dae998af4695efcdc5498f73617a12ee37895b62f113d458 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f51801e11d916779dae998af4695efcdc5498f73617a12ee37895b62f113d458->enter($__internal_f51801e11d916779dae998af4695efcdc5498f73617a12ee37895b62f113d458_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_469f9cea7c2126f522a80ba2c5be00083a2eb83420f94e2815a7adb3a6fc6d21 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_469f9cea7c2126f522a80ba2c5be00083a2eb83420f94e2815a7adb3a6fc6d21->enter($__internal_469f9cea7c2126f522a80ba2c5be00083a2eb83420f94e2815a7adb3a6fc6d21_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         $this->displayParentBlock("title", $context, $blocks);
         echo " - Boutique";
         
-        $__internal_f51801e11d916779dae998af4695efcdc5498f73617a12ee37895b62f113d458->leave($__internal_f51801e11d916779dae998af4695efcdc5498f73617a12ee37895b62f113d458_prof);
+        $__internal_469f9cea7c2126f522a80ba2c5be00083a2eb83420f94e2815a7adb3a6fc6d21->leave($__internal_469f9cea7c2126f522a80ba2c5be00083a2eb83420f94e2815a7adb3a6fc6d21_prof);
 
         
-        $__internal_3c1889055a1e56f3c0bd1de5bf111dcf7aa33ddc684cd121cd2a17e441deb812->leave($__internal_3c1889055a1e56f3c0bd1de5bf111dcf7aa33ddc684cd121cd2a17e441deb812_prof);
+        $__internal_e44550e66cdea33021beb4ea3cd51a741195bb7b50afcddb0a6e1a6d759b2296->leave($__internal_e44550e66cdea33021beb4ea3cd51a741195bb7b50afcddb0a6e1a6d759b2296_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_638f56da20cc955b891988c4ec855461964930301a6154c55c05255a2bcbb0bf = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_638f56da20cc955b891988c4ec855461964930301a6154c55c05255a2bcbb0bf->enter($__internal_638f56da20cc955b891988c4ec855461964930301a6154c55c05255a2bcbb0bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_4fa194c3ab482ffea3d2b181c79a62e4ead8010fe6c4a0c4b88126fc0c2f68c3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4fa194c3ab482ffea3d2b181c79a62e4ead8010fe6c4a0c4b88126fc0c2f68c3->enter($__internal_4fa194c3ab482ffea3d2b181c79a62e4ead8010fe6c4a0c4b88126fc0c2f68c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_2f1ea59f943a846ba49b8db06fc51a59b82e3e13c26d25f7cb11f66e7c4c189b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2f1ea59f943a846ba49b8db06fc51a59b82e3e13c26d25f7cb11f66e7c4c189b->enter($__internal_2f1ea59f943a846ba49b8db06fc51a59b82e3e13c26d25f7cb11f66e7c4c189b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e4e6981187e3958e18ed0121ff3d87762833d45c6e115b35607370d4ea7e2d38 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e4e6981187e3958e18ed0121ff3d87762833d45c6e115b35607370d4ea7e2d38->enter($__internal_e4e6981187e3958e18ed0121ff3d87762833d45c6e115b35607370d4ea7e2d38_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
         echo "
@@ -136,63 +136,65 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
         echo "
             </div>
             
+            
+            
+                
         </div>
         
         <div>
         
         <h3>Visiteurs</h3>
 
-        <ul class=\"visitors\" data-prototype=\"";
-        // line 44
+        <ul class=\"visitors form-group\" data-prototype=\"";
+        // line 47
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "visitors", array()), "vars", array()), "prototype", array()), 'widget'), "html_attr");
         echo "\"></ul>
             
         <button href=\"#\" class=\"addVisitor\">Ajouter un visiteur</button>
         </div>
 
-    ";
-        // line 49
+        ";
+        // line 52
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "save", array()), 'row');
         echo " 
+        
+        ";
+        // line 54
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_token", array()), 'widget');
+        echo "
+
 </div>
 
 
 ";
-        // line 53
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 58
-        echo "
-";
         
-        $__internal_2f1ea59f943a846ba49b8db06fc51a59b82e3e13c26d25f7cb11f66e7c4c189b->leave($__internal_2f1ea59f943a846ba49b8db06fc51a59b82e3e13c26d25f7cb11f66e7c4c189b_prof);
+        $__internal_e4e6981187e3958e18ed0121ff3d87762833d45c6e115b35607370d4ea7e2d38->leave($__internal_e4e6981187e3958e18ed0121ff3d87762833d45c6e115b35607370d4ea7e2d38_prof);
 
         
-        $__internal_638f56da20cc955b891988c4ec855461964930301a6154c55c05255a2bcbb0bf->leave($__internal_638f56da20cc955b891988c4ec855461964930301a6154c55c05255a2bcbb0bf_prof);
+        $__internal_4fa194c3ab482ffea3d2b181c79a62e4ead8010fe6c4a0c4b88126fc0c2f68c3->leave($__internal_4fa194c3ab482ffea3d2b181c79a62e4ead8010fe6c4a0c4b88126fc0c2f68c3_prof);
 
     }
 
-    // line 53
+    // line 61
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_194466821ec303ddc4265fb998159a7eb02c3ec84757e1a6f4b5b3b18a0283fd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_194466821ec303ddc4265fb998159a7eb02c3ec84757e1a6f4b5b3b18a0283fd->enter($__internal_194466821ec303ddc4265fb998159a7eb02c3ec84757e1a6f4b5b3b18a0283fd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_4509fba189d83a86159c32d76472f65005aa7eede12f575e4058bd2818c2fdec = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4509fba189d83a86159c32d76472f65005aa7eede12f575e4058bd2818c2fdec->enter($__internal_4509fba189d83a86159c32d76472f65005aa7eede12f575e4058bd2818c2fdec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_aecaade83bf767514f3bc92046085957b31c7b7bdfda3fb2e3d0f6656a1df4cc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_aecaade83bf767514f3bc92046085957b31c7b7bdfda3fb2e3d0f6656a1df4cc->enter($__internal_aecaade83bf767514f3bc92046085957b31c7b7bdfda3fb2e3d0f6656a1df4cc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_afbfc497561355256cb42f1a884ac2cf6fc51e34fe3c6552570e2724bc352842 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_afbfc497561355256cb42f1a884ac2cf6fc51e34fe3c6552570e2724bc352842->enter($__internal_afbfc497561355256cb42f1a884ac2cf6fc51e34fe3c6552570e2724bc352842_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         echo " 
-<script src=\"//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
 <script src=\"";
-        // line 55
+        // line 62
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bookingFormulaire.js"), "html", null, true);
         echo "\"></script>
-<script src=\"https://js.stripe.com/v3/\"></script>
 ";
         
-        $__internal_aecaade83bf767514f3bc92046085957b31c7b7bdfda3fb2e3d0f6656a1df4cc->leave($__internal_aecaade83bf767514f3bc92046085957b31c7b7bdfda3fb2e3d0f6656a1df4cc_prof);
+        $__internal_afbfc497561355256cb42f1a884ac2cf6fc51e34fe3c6552570e2724bc352842->leave($__internal_afbfc497561355256cb42f1a884ac2cf6fc51e34fe3c6552570e2724bc352842_prof);
 
         
-        $__internal_194466821ec303ddc4265fb998159a7eb02c3ec84757e1a6f4b5b3b18a0283fd->leave($__internal_194466821ec303ddc4265fb998159a7eb02c3ec84757e1a6f4b5b3b18a0283fd_prof);
+        $__internal_4509fba189d83a86159c32d76472f65005aa7eede12f575e4058bd2818c2fdec->leave($__internal_4509fba189d83a86159c32d76472f65005aa7eede12f575e4058bd2818c2fdec_prof);
 
     }
 
@@ -208,7 +210,7 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
 
     public function getDebugInfo()
     {
-        return array (  187 => 55,  175 => 53,  164 => 58,  162 => 53,  155 => 49,  147 => 44,  135 => 35,  130 => 33,  126 => 32,  123 => 31,  117 => 28,  112 => 26,  108 => 25,  105 => 24,  99 => 21,  94 => 19,  90 => 18,  87 => 17,  80 => 13,  75 => 11,  70 => 8,  61 => 7,  42 => 5,  11 => 3,);
+        return array (  190 => 62,  179 => 61,  163 => 54,  158 => 52,  150 => 47,  135 => 35,  130 => 33,  126 => 32,  123 => 31,  117 => 28,  112 => 26,  108 => 25,  105 => 24,  99 => 21,  94 => 19,  90 => 18,  87 => 17,  80 => 13,  75 => 11,  70 => 8,  61 => 7,  42 => 5,  11 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -258,27 +260,31 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
                 {{ form_widget(form.bookingemail, {'attr': {'class': 'form-control'}}) }}
             </div>
             
+            
+            
+                
         </div>
         
         <div>
         
         <h3>Visiteurs</h3>
 
-        <ul class=\"visitors\" data-prototype=\"{{ form_widget(form.visitors.vars.prototype)|e('html_attr') }}\"></ul>
+        <ul class=\"visitors form-group\" data-prototype=\"{{ form_widget(form.visitors.vars.prototype)|e('html_attr') }}\"></ul>
             
         <button href=\"#\" class=\"addVisitor\">Ajouter un visiteur</button>
         </div>
 
-    {{ form_row(form.save) }} 
+        {{ form_row(form.save) }} 
+        
+        {{ form_widget(form._token) }}
+
 </div>
 
 
-{% block javascripts %} 
-<script src=\"//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-<script src=\"{{ asset('js/bookingFormulaire.js') }}\"></script>
-<script src=\"https://js.stripe.com/v3/\"></script>
 {% endblock %}
 
+{% block javascripts %} 
+<script src=\"{{ asset('js/bookingFormulaire.js') }}\"></script>
 {% endblock %}
 
 

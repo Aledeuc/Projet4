@@ -140,7 +140,7 @@ body
       margin-top: 50px;
   }
 
-  .saveButton, .addVisitor, .removeVisitor
+  .saveButton, .addVisitor
   {
     font-family: Georgia, sans-serif;
     font-size: 20px;
@@ -153,9 +153,14 @@ body
     border-color: #000205;
   }
 
+  .saveButton
+  {
+      margin: 15px;
+  }
+
   ul li
   {
-    text-decoration: none;
+    list-style: none;
   }
   /* footer */
 

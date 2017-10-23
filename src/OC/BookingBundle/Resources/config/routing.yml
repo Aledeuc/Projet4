@@ -2,14 +2,10 @@ oc_booking_homepage:
     path:     /museedulouvre.fr
     defaults: { _controller: OCBookingBundle:Home:index }
 
-# oc_booking_ticket:
-#    path:    /billeterie
-#   defaults: { _controller: OCBookingBundle:}
-
-oc_booking_homepageEn:
-    path:    /museedulouvre.fr/en
-    defaults: { _controller: OCBookingBundle:Home:indexEn }
-
 oc_booking_form:
     path:    /museedulouvre.fr/billeterie
     defaults: { _controller: OCBookingBundle:Bookingform:form }
+
+oc_payment_form:
+    path:    /museedulouvre.fr/paiement
+    defaults: { _controller: OCBookingBundle:Paymentform:payment }

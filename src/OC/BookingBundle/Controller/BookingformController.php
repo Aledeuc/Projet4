@@ -34,6 +34,8 @@ class BookingformController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) 
         {
+            $count = substr_count($html,'<li>');
+            $bookingform->getNbVisitor($count);
             $bookingform = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($bookingform);

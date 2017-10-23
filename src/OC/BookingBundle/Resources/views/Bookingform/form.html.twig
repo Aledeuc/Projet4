@@ -35,27 +35,31 @@
                 {{ form_widget(form.bookingemail, {'attr': {'class': 'form-control'}}) }}
             </div>
             
+            
+            
+                
         </div>
         
         <div>
         
         <h3>Visiteurs</h3>
 
-        <ul class="visitors" data-prototype="{{ form_widget(form.visitors.vars.prototype)|e('html_attr') }}"></ul>
+        <ul class="visitors form-group" data-prototype="{{ form_widget(form.visitors.vars.prototype)|e('html_attr') }}"></ul>
             
         <button href="#" class="addVisitor">Ajouter un visiteur</button>
         </div>
 
-    {{ form_row(form.save) }} 
+        {{ form_row(form.save) }} 
+        
+        {{ form_widget(form._token) }}
+
 </div>
 
 
-{% block javascripts %} 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="{{ asset('js/bookingFormulaire.js') }}"></script>
-<script src="https://js.stripe.com/v3/"></script>
 {% endblock %}
 
+{% block javascripts %} 
+<script src="{{ asset('js/bookingFormulaire.js') }}"></script>
 {% endblock %}
 
 

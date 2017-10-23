@@ -30,6 +30,7 @@ class VisitorType extends AbstractType
         ->add('country',      TextType::class, array(
             'label'    => 'Pays'))
         ->add('reducedPrice',      CheckboxType::class, array(
+            'value'    => '1',
             'label'    => 'Tarif réduit',
             'required' => false,
         ));

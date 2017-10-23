@@ -189,4 +189,58 @@ class Visitor
         return $this->reducedPrice;
     }
 
+    function computReducPrice()
+    {
+    // calculer l'âge du visitor
+        $date = getBirthdate();
+        $age = date('Y') - date('Y', strtotime($date));
+        
+        if (date('md') < date('md', strtotime($date))) 
+        {
+            $age = $age - 1;
+        }
+
+    //calcul le prix du visitor
+
+        $price = getReducedPrice(); 
+
+        // récuperation du repository Rate ou sont stocker les prix
+        $repository = $this 
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('OCBookingBundle:Rate')
+        ;
+
+        if  ( $price = '1')
+        {
+            // tarif réduit 10euros
+            $rate = $repository->find(7);
+            return $rate;
+        } 
+        elseif ($age < 4)     
+        {
+            // gratuit enfait - 4ans
+             $rate = $repository->find(10);
+             return $rate;
+        } 
+        elseif ($age <= 12)
+        {
+            // Entre 4 et 12 ans  8euros
+            $rate = $repository->find(6);
+            return $rate;
+        }
+        elseif ($age <= 60)
+        {
+            // de 12 à 60ans 16euros
+            $rate = $repository->find(9);
+            return $rate;
+        }
+        elseif ($age > 60 )
+        {
+            // au delà de 60ans 12euros
+            $rate = $repository->find(8);
+            return $rate;
+        }
+
+    }
 }

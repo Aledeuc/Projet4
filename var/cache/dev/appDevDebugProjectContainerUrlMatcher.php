@@ -109,14 +109,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'OC\\BookingBundle\\Controller\\HomeController::indexAction',  '_route' => 'oc_booking_homepage',);
             }
 
-            // oc_booking_homepageEn
-            if ('/museedulouvre.fr/en' === $pathinfo) {
-                return array (  '_controller' => 'OC\\BookingBundle\\Controller\\HomeController::indexEnAction',  '_route' => 'oc_booking_homepageEn',);
-            }
-
             // oc_booking_form
             if ('/museedulouvre.fr/billeterie' === $pathinfo) {
                 return array (  '_controller' => 'OC\\BookingBundle\\Controller\\BookingformController::formAction',  '_route' => 'oc_booking_form',);
+            }
+
+            // oc_payment_form
+            if ('/museedulouvre.fr/paiement' === $pathinfo) {
+                return array (  '_controller' => 'OCBookingBundle:Paymentform:payment',  '_route' => 'oc_payment_form',);
             }
 
         }

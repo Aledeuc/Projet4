@@ -61,6 +61,13 @@ class Bookingform
      */
     private $visitors;
 
+    /** 
+     *  @var string
+     * 
+     * @ORM\Column (name="visitor_price", type="string", length=255)
+     */  
+     private $VisitorPrice;
+
 
     /**
      * Constructor
@@ -208,5 +215,30 @@ class Bookingform
     public function getVisitors()
     {
         return $this->visitors;
+    }
+
+
+    /**
+     * Set visitorPrice
+     *
+     * @param string $visitorPrice
+     *
+     * @return Bookingform
+     */
+    public function setVisitorPrice($visitorPrice)
+    {
+        $this->VisitorPrice = $visitorPrice;
+
+        return $this;
+    }
+
+    /**
+     * Get visitorPrice
+     *
+     * @return string
+     */
+    public function getVisitorPrice()
+    {
+        return $this->VisitorPrice;
     }
 }
