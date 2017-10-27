@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Day
 {
+
+     /**
+     * @ORM\ManyToOne(targetEntity="OC\BookingBundle\Entity\Bookingform")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $bookinform;
+
     /**
      * @var int
      *
@@ -124,5 +131,28 @@ class Day
     {
         return $this->full;
     }
-}
 
+    /**
+     * Set bookinform
+     *
+     * @param \OC\BookingBundle\Entity\Bookingform $bookinform
+     *
+     * @return Day
+     */
+    public function setBookinform(\OC\BookingBundle\Entity\Bookingform $bookinform)
+    {
+        $this->bookinform = $bookinform;
+
+        return $this;
+    }
+
+    /**
+     * Get bookinform
+     *
+     * @return \OC\BookingBundle\Entity\Bookingform
+     */
+    public function getBookinform()
+    {
+        return $this->bookinform;
+    }
+}

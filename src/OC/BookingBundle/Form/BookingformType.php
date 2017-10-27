@@ -23,13 +23,33 @@ class BookingformType extends AbstractType
     {
         $builder
             ->add('bookingDate',      DateType::class, array(
-                'label'    => 'Date de la visite'))
+                'label'    => 'Date de la visite',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy',
+                'widget' => 'single_text',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker'],
+                ))
             ->add('ticketType',      ChoiceType::class, array(
                 'label' =>  'Type de ticket',
                 'choices'  => array(
                     'Journée' => 'full',
                     'Demi-journée' => 'half',
                 )))
+            ->add('nbVisitor',      ChoiceType::class, array(
+                'label' =>  'Nombre de visiteur',
+                'choices'  => array(
+                    '1' => '1',
+                    '2' => '2',
+                    '3' => '3',
+                    '4' => '4',
+                    '5' => '5',
+                    '6' => '6',
+                    '7' => '7',
+                    '8' => '8',
+                    '9' => '9',
+                    '10' => '10',
+                    )))
             ->add('bookingemail',   TextType::class, array(
                 'label'    => 'Email'));
 
@@ -44,7 +64,9 @@ class BookingformType extends AbstractType
             ->add('save', SubmitType::class, array(
                 'label' => 'Réserver',
                 'attr' => array(
-                'class' =>  'saveButton')));
+                'class' =>  'saveButton',
+                'href' => "{{ path('oc_payment_form') }}",
+                )));
     }
     
     /**

@@ -9,7 +9,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 
@@ -25,12 +25,12 @@ class VisitorType extends AbstractType
             'label'    => 'Nom'))
         ->add('firstname',      TextType::class, array(
             'label'    => 'Prénom'))
-        ->add('birthdate',      DateType::class, array(
-            'label'    => 'Date de naissance'))
+        ->add('birthdate',      BirthdayType::class, array(
+            'label'    => 'Date de naissance',
+            ))
         ->add('country',      TextType::class, array(
             'label'    => 'Pays'))
         ->add('reducedPrice',      CheckboxType::class, array(
-            'value'    => '1',
             'label'    => 'Tarif réduit',
             'required' => false,
         ));

@@ -6,6 +6,7 @@ namespace OC\BookingBundle\Controller;
 
 use OC\BookingBundle\Entity\Bookingform;
 use OC\BookingBundle\Entity\Visitor;
+use OC\BookingBundle\Entity\Day;
 use OC\BookingBundle\Form\BookingformType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,9 +35,40 @@ class BookingformController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) 
         {
+            // Nb Visitor
+            $html= file_get_contents('http://localhost:8888/web/app_dev.php/museedulouvre.fr/billeterie');
             $count = substr_count($html,'<li>');
-            $bookingform->getNbVisitor($count);
+            
+            $bookingform->setNbVisitor($count);
+            //$bookingform->getNbVisitor($count);
             $bookingform = $form->getData();
+
+            // Vérification du nombre de place disponible pour la date choisit
+            $day = new Day();
+            $dateOfBooking = $bookingform->getBookingDate();
+            $placeLibre = $day->getPlace();
+            $day->setDate($dateOfBooking);
+
+            $previsionPlace = $placeLibre + $count;
+
+            if ( $previsionPlace >= 1000 ) 
+            {
+                 echo("réservation impossible")
+            }
+            else 
+            {
+                $placeLibre = $placeLibre + $count
+            }
+    
+
+            // total Price
+            $price = 0;
+            for ($i = 0; $i == $count; $i++) {               
+               $visitorprice = $visitor->computReducPrice();
+               $price = $price + $visitorprice;
+            }
+            
+            $bookingform->setTotalPrice($price);
             $em = $this->getDoctrine()->getManager();
             $em->persist($bookingform);
             $em->flush();
