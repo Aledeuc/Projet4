@@ -34,9 +34,7 @@ $(function() {
         e.preventDefault();
         
         var count = $('<li>').length;
-        alert(count);
-       
-        
+
         addTagForm($collectionHolder, $newLinkLi);
     });
     

@@ -36,20 +36,6 @@ class BookingformType extends AbstractType
                     'Journée' => 'full',
                     'Demi-journée' => 'half',
                 )))
-            ->add('nbVisitor',      ChoiceType::class, array(
-                'label' =>  'Nombre de visiteur',
-                'choices'  => array(
-                    '1' => '1',
-                    '2' => '2',
-                    '3' => '3',
-                    '4' => '4',
-                    '5' => '5',
-                    '6' => '6',
-                    '7' => '7',
-                    '8' => '8',
-                    '9' => '9',
-                    '10' => '10',
-                    )))
             ->add('bookingemail',   TextType::class, array(
                 'label'    => 'Email'));
 

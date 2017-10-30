@@ -26,7 +26,7 @@ class BookingformController extends Controller
        $bookingform = new Bookingform();
 
        $visitor = new Visitor();
-
+       $em = $this->getDoctrine()->getManager();
        $visitor->setName('');
        $bookingform->getVisitors()->add($visitor);
        
@@ -36,40 +36,66 @@ class BookingformController extends Controller
         if ($form->isSubmitted() && $form->isValid()) 
         {
             // Nb Visitor
-            $html= file_get_contents('http://localhost:8888/web/app_dev.php/museedulouvre.fr/billeterie');
-            $count = substr_count($html,'<li>');
-            
-            $bookingform->setNbVisitor($count);
-            //$bookingform->getNbVisitor($count);
+            $total_visitor = $bookingform->getVisitors()->count();
+            $bookingform->setNbVisitor($total_visitor);
             $bookingform = $form->getData();
 
-            // Vérification du nombre de place disponible pour la date choisit
+            // remaining entry check
             $day = new Day();
-            $dateOfBooking = $bookingform->getBookingDate();
-            $placeLibre = $day->getPlace();
-            $day->setDate($dateOfBooking);
-
-            $previsionPlace = $placeLibre + $count;
-
-            if ( $previsionPlace >= 1000 ) 
-            {
-                 echo("réservation impossible")
-            }
-            else 
-            {
-                $placeLibre = $placeLibre + $count
-            }
-    
-
-            // total Price
-            $price = 0;
-            for ($i = 0; $i == $count; $i++) {               
-               $visitorprice = $visitor->computReducPrice();
-               $price = $price + $visitorprice;
-            }
             
-            $bookingform->setTotalPrice($price);
-            $em = $this->getDoctrine()->getManager();
+            $dateOfBooking = $bookingform->getBookingDate();
+            $place_check = $day->getPlace(); // recup nombre de place
+
+
+            $repository = $this->getDoctrine()->getRepository(Day::class);
+            $day_repository = $repository->findOneByDate($dateOfBooking);
+
+            var_dump($day_repository);   
+
+            if ( $day_repository == null )
+            {
+                $day->setDate($dateOfBooking);
+                $place_check = $place_check + $total_visitor;
+                $day->setPlace($place_check);
+                $day->setFull(false);
+                $em->persist($day);
+            } else 
+            {
+                $reserved_place = $day_repository->getPlace();
+                $reserved_place = $reserved_place + $total_visitor;
+                $day_full_check = $day_repository->getFull();
+ var_dump($reserved_place);
+                if ($day_full_check == true )
+                    echo(' Réservation impossible à cette date');
+                elseif ($reserved_place > 1000)
+                    echo(' Réservation impossible à cette date');
+                    elseif ( $reserved_place == 1000)
+                        {
+                            $day_repository->setPlace($reserved_place);
+                            $day_repository->setFull(new true);
+                        } else 
+                        {
+                            $day_repository->setPlace($reserved_place); 
+                        }            
+            }
+           
+            var_dump($day);
+            
+           
+            // total price
+            $total_price= $bookingform->getTotalPrice();
+            $tabl_visitors = $bookingform->getVisitors();
+            foreach ( $tabl_visitors as $visitor)
+            {
+                $visitor->computReducPrice($this->container);
+            
+                $total_price = $total_price + $visitor->computReducPrice($this->container);
+            }
+            $bookingform->setTotalPrice($total_price);
+        
+
+            // Form persist
+            
             $em->persist($bookingform);
             $em->flush();
         }

@@ -39,12 +39,7 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'bootstrap_3_layout.html.twig'
-    globals:
-        enfant_moins_4: '%enfant_moins_4%'
-        enfant_4_a_12: '%enfant_4_a_12%'
-        personne_12_a_60: '%personne_12_a_60%'
-        personne_plus_60: '%personne_plus_60%'
-        personne_reduit: '%personne_reduit%'
+    
 
 # Doctrine Configuration
 doctrine:

@@ -57,7 +57,14 @@ class Bookingform
      */
     private $bookingEmail;
 
-    /**
+    /** 
+     *  @var string
+     * 
+     * @ORM\Column (name="total_price", type="string", length=255)
+     */  
+     private $totalPrice;
+
+     /**
      * @var Visitor
      * 
      * @Assert\Valid()
@@ -65,12 +72,13 @@ class Bookingform
      */
     private $visitors;
 
-    /** 
-     *  @var string
+    /**
+     * @var Visitor
      * 
-     * @ORM\Column (name="total_price", type="string", length=255)
-     */  
-     private $totalPrice;
+     * @Assert\Valid()
+     * @ORM\ManyToMany(targetEntity="OC\BookingBundle\Entity\Day",  cascade={"persist"})
+     */
+    private $days;
 
 
     /**

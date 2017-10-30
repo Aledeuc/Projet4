@@ -189,51 +189,28 @@ class Visitor
         return $this->reducedPrice;
     }
 
-    public function computReducPrice()
+    public function computReducPrice($container)
     {
         // calculer l'âge du visitor
-        $date = getBirthdate();
-        $age = date('Y') - date('Y', strtotime($date));
+        $date = $this->getBirthdate();
+        $age = date('Y') - $date->format('Y');
         
-        if (date('md') < date('md', strtotime($date))) 
+        if (date('md') < $date->format('md')) 
         {
             $age = $age - 1;
         }
-
         //calcul le prix du visitor
+        $reduced_price = $this->getReducedPrice(); 
 
-        $reduced_price = getReducedPrice(); 
-
-        if  ( $reduced_price == 1)
-        {
-                $tarifReduit = $this->container->getParameter('personne_reduit');
-                // tarif réduit 10euros
-                return $tarifReduit;
-            } 
-            elseif ($age < 4)     
-            {
-                $enfant_moins_4 = $this->container->getParameter('enfant_moins_4');
-                // gratuit enfant - 4ans
-                return $enfant_moins_4;
-            } 
-            elseif ($age <= 12)
-            {
-                $enfant_4_a_12 = $this->container->getParameter('enfant_4_a_12');
-                // Entre 4 et 12 ans  8euros
-                return $enfant_4_a_12;
-            }
-            elseif ($age <= 60)
-            {
-                $personne_12_a_60 = $this->container->getParameter('personne_12_a_60');
-                // de 12 à 60ans 16euros
-                return $personne_12_a_60;
-            }
-            elseif ($age > 60 )
-            {
-                $personne_plus_60 = $this->container->getParameter('personne_plus_60');
-                // au delà de 60ans 12euros
-                return $personne_plus_60;
-            }
-
-        }
+        if  ( $reduced_price == 1) 
+            return $container->getParameter('personne_reduit');
+        elseif ($age < 4)     
+            return $container->getParameter('enfant_moins_4');
+        elseif ($age <= 12)
+            return $container->getParameter('enfant_4_a_12');
+        elseif ($age <= 60)
+            return $container->getParameter('personne_12_a_60');
+        elseif ($age > 60 )
+            return $container->getParameter('personne_plus_60');
+    }
 }

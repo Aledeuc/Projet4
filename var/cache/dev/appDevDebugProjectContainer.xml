@@ -506,7 +506,6 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate">
       <argument type="collection">
         <argument type="service" id="templating.cache_warmer.template_paths"/>
-        <argument type="service" id="kernel.class_cache.cache_warmer"/>
         <argument type="service" id="validator.mapping.cache_warmer"/>
         <argument type="service" id="router.cache_warmer"/>
         <argument type="service" id="annotations.cache_warmer"/>
@@ -516,7 +515,6 @@
       </argument>
     </service>
     <service id="kernel.class_cache.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ClassCacheCacheWarmer">
-      <tag name="kernel.cache_warmer"/>
       <argument type="collection">
         <argument>Symfony\Component\HttpFoundation\ParameterBag</argument>
         <argument>Symfony\Component\HttpFoundation\HeaderBag</argument>
@@ -525,6 +523,7 @@
         <argument>Symfony\Component\HttpFoundation\Request</argument>
         <argument>Symfony\Component\HttpKernel\Kernel</argument>
       </argument>
+      <deprecated>The "%service_id%" option is deprecated since version 3.3, to be removed in 4.0.</deprecated>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="collection">
@@ -630,7 +629,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>8S7Y7Z1XMZR4d5+hEtRhzz</argument>
+      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -640,7 +639,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>8S7Y7Z1XMZR4d5+hEtRhzz</argument>
+      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -1397,14 +1396,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -2190,12 +2181,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>59f3528c112f79.05528906</argument>
+      <argument>59f726e3264301.41348119</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>59f3528c112f79.05528906</argument>
+      <argument>59f726e3264301.41348119</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2315,26 +2306,6 @@
       </call>
       <call method="addRuntimeLoader">
         <argument type="service" id="twig.runtime_loader"/>
-      </call>
-      <call method="addGlobal">
-        <argument>enfant_moins_4</argument>
-        <argument>0</argument>
-      </call>
-      <call method="addGlobal">
-        <argument>enfant_4_a_12</argument>
-        <argument>8</argument>
-      </call>
-      <call method="addGlobal">
-        <argument>personne_12_a_60</argument>
-        <argument>16</argument>
-      </call>
-      <call method="addGlobal">
-        <argument>personne_plus_60</argument>
-        <argument>12</argument>
-      </call>
-      <call method="addGlobal">
-        <argument>personne_reduit</argument>
-        <argument>10</argument>
       </call>
       <configurator service="twig.configurator.environment" method="configure"/>
     </service>
@@ -3477,7 +3448,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>IBhlGcNsJZ</argument>
       <argument>0</argument>
-      <argument>8S7Y7Z1XMZR4d5+hEtRhzz</argument>
+      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3485,7 +3456,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Q12vwMYRlr</argument>
       <argument>0</argument>
-      <argument>8S7Y7Z1XMZR4d5+hEtRhzz</argument>
+      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3493,7 +3464,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>RPm00JQ+NM</argument>
       <argument>0</argument>
-      <argument>8S7Y7Z1XMZR4d5+hEtRhzz</argument>
+      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3501,7 +3472,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>LAkSQIHoG2</argument>
       <argument>0</argument>
-      <argument>8S7Y7Z1XMZR4d5+hEtRhzz</argument>
+      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
