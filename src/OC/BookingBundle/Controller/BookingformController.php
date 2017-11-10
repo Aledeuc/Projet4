@@ -49,39 +49,32 @@ class BookingformController extends Controller
 
             // remaining entry check
             $day = new Day();
-            
             $dateOfBooking = $bookingform->getBookingDate();
             $place_check = $day->getPlace(); // recup nombre de place
-
             $repository = $this->getDoctrine()->getRepository(Day::class);
             $existing_day = $repository->findOneByDate($dateOfBooking);
-            
-            // can't booking full ticket for current day after 14 pm
-            // $today = date('d');
-            // $hour = date('H');
-            // var_dump($hour);
-            // exit;
-            // if ( $dateOfBooking == $today && $hour > 9)
-            // {
-            //     $form->add('ticketType',      ChoiceType::class, array(
-            //         'choices'  => array(
-            //             'Demi-journée' => 'half')
-                        
-            //         ) );
-            //         echo('reservation impossible');
-            // };
-
-
-
-
+            $type_ticket= $bookingform->getTicketType();
+            //can't booking full ticket for current day after 14 pm
+            $today = date('Y-m-d');
+            $hour = date('H');
+            $day_selected= $dateOfBooking->format('Y-m-d');
+            if ( ($day_selected == $today) && ($hour > 9) && ($type_ticket == 'full') )
+            {
+                $this->addFlash(
+                    'notice',
+                    'Après 14h vous ne pouvez commander que des billets pour la demi-journée.'
+                );
+                return $this->render('OCBookingBundle:Bookingform:form.html.twig', array(
+                    'form' => $form->createView()
+                ));
+            };
             if ( $existing_day == null )
             {
                 $day->setDate($dateOfBooking);
                 $place_check = $place_check + $total_visitor;
-                
                 $day->setPlace($place_check);
                 $em->persist($day);
-                $idDay = $day->getId();
+                
                 $reserved_places = $day->getPlace();
                 
             }
@@ -89,7 +82,6 @@ class BookingformController extends Controller
             {
                 $reserved_place = $existing_day->getPlace();
                 $reserved_place = $reserved_place + $total_visitor;
-                
                 
                 if ($reserved_place > 1000)
                 {
@@ -106,7 +98,8 @@ class BookingformController extends Controller
                 {
                     $existing_day->setPlace($reserved_place);
                     $idDay = $existing_day->getId();
-                    $reserved_places = $reserved_place;                    
+                    $reserved_places = $reserved_place;  
+                    $em->persist($day);                  
                     
                 } 
                 else 
@@ -114,6 +107,7 @@ class BookingformController extends Controller
                     $existing_day->setPlace($reserved_place); 
                     $idDay = $existing_day->getId();
                     $reserved_places = $reserved_place;  
+                    $em->persist($day);
                                      
                 }            
             }
@@ -136,10 +130,12 @@ class BookingformController extends Controller
             
             $em->persist($bookingform);
             $em->flush();
-
+            $idDay = $day->getId();
+            
 
             // session for payment
             $session->set('idDay', $idDay);
+            $session->set('idBooking', $bookingform);
             $session->set('reservedPlace', $reserved_places);
             $session->set('totalPrice', $total_price);
             $session->set('tableauNom', $nom_visitors);

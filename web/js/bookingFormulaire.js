@@ -21,12 +21,34 @@ $(function() {
             var day = date.getDay();
             var string = jQuery.datepicker.formatDate('d-m-yy', date);
             var isDisabled = ($.inArray(string, jourFerie) != -1);
-            return [day != 0 && !isDisabled];
+            return [day != 0 && day!= 2 && !isDisabled];
         }// impossible de séléctionner dimanche
+        
     });  
 
+    // bloquer les réservations à la journée après 14h
     $( ".js-datepicker" ).change(function() {
-        alert( "Handler for .change() called." );
+        var date = new Date();
+        var day = date.getDate();
+        var hour = date.getHours();
+
+        var daySelected = $(this).datepicker('getDate').getDate();
+
+        console.log(daySelected);
+        console.log(day);
+        console.log(hour);
+
+        if ( (daySelected == day) && (hour >= 14) )
+        {
+            $("#oc_bookingbundle_bookingform_ticketType").val('half');
+            $("#oc_bookingbundle_bookingform_ticketType").prop('disabled', true);
+            alert('Après 14h vous ne pouvez commander que des billets pour la demi-journée.')
+        } 
+        else 
+        {
+            $("#oc_bookingbundle_bookingform_ticketType").prop('disabled', false);
+        }
+ 
       });
 
     // bouton add visitor et génération formulaire visitor

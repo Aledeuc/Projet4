@@ -14,9 +14,9 @@ class Day
 {
 
     /**
-    * @ORM\OneToMany(targetEntity="OC\BookingBundle\Entity\Bookingform", mappedBy="advert")
+    * @ORM\OneToMany(targetEntity="OC\BookingBundle\Entity\Bookingform", mappedBy="day")
     */
-    private $bookinforms; 
+    private $bookingforms; 
 
     /**
      * @var int
@@ -125,93 +125,44 @@ class Day
     }
 
     /**
-     * Set bookinform
-     *
-     * @param \OC\BookingBundle\Entity\Bookingform $bookinform
-     *
-     * @return Day
+     * Constructor
      */
-    public function setBookinform(\OC\BookingBundle\Entity\Bookingform $bookinform)
+    public function __construct()
     {
-        $this->bookinform = $bookinform;
-
-        return $this;
+        $this->bookingforms = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Get bookinform
-     *
-     * @return \OC\BookingBundle\Entity\Bookingform
-     */
-    public function getBookinform()
-    {
-        return $this->bookinform;
-    }
-
- 
-
-    /**
-     * Set bookingform
+     * Add bookingform
      *
      * @param \OC\BookingBundle\Entity\Bookingform $bookingform
      *
      * @return Day
      */
-    public function setBookingform(\OC\BookingBundle\Entity\Bookingform $bookingform)
+    public function addBookingform(\OC\BookingBundle\Entity\Bookingform $bookingform)
     {
-        $this->bookingform = $bookingform;
+        $this->bookingforms[] = $bookingform;
 
         return $this;
     }
 
     /**
-     * Get bookingform
+     * Remove bookingform
      *
-     * @return \OC\BookingBundle\Entity\Bookingform
+     * @param \OC\BookingBundle\Entity\Bookingform $bookingform
      */
-    public function getBookingform()
+    public function removeBookingform(\OC\BookingBundle\Entity\Bookingform $bookingform)
     {
-        return $this->bookingform;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->bookinforms = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->bookingforms->removeElement($bookingform);
     }
 
     /**
-     * Add bookinform
-     *
-     * @param \OC\BookingBundle\Entity\Bookingform $bookinform
-     *
-     * @return Day
-     */
-    public function addBookinform(\OC\BookingBundle\Entity\Bookingform $bookinform)
-    {
-        $this->bookinforms[] = $bookinform;
-
-        return $this;
-    }
-
-    /**
-     * Remove bookinform
-     *
-     * @param \OC\BookingBundle\Entity\Bookingform $bookinform
-     */
-    public function removeBookinform(\OC\BookingBundle\Entity\Bookingform $bookinform)
-    {
-        $this->bookinforms->removeElement($bookinform);
-    }
-
-    /**
-     * Get bookinforms
+     * Get bookingforms
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getBookinforms()
+    public function getBookingforms()
     {
-        return $this->bookinforms;
+        return $this->bookingforms;
     }
 }

@@ -6,6 +6,12 @@
 
 {% block body %}
 
+{% for message in app.flashes('notice') %}
+<div class="flash-notice">
+    {{ message }}
+</div>
+{% endfor %}
+
 <div class="well">
 
     {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
