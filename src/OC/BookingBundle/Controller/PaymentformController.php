@@ -1,11 +1,10 @@
 <?php
-
 // src/BookingBundle/Controller/PaymentformController.php
-
 namespace OC\BookingBundle\Controller;
 
 use OC\BookingBundle\Entity\Payment;
 use OC\BookingBundle\Entity\Day;
+use OC\BookingBundle\Entity\Bookingform;
 use OC\BookingBundle\Controller\Email;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,89 +14,118 @@ use Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle;
 
 class PaymentformController extends Controller
 
-	{
-	public function paymentAction()
-		{
-		$session = $this->get('session');
-		$idDay = $session->get('idDay');
-		$reservedPlace = $session->get('reservedPlace');
-		$totalPrice = $session->get('totalPrice');
-		$ticketType = $session->get('ticketType');
-		$totalVisitor = $session->get('totalVisitor');
-		$bookingEmail = $session->get('bookingEmail');
-		$priceStripe = $totalPrice * 100;
-		$repository = $this->getDoctrine()->getRepository(Day::class);
-
-        $entityDay = $repository->findOneById($idDay);
-        var_dump($idDay);
-		$dateOfBooking = $entityDay->getDate();
-		return $this->render('OCBookingBundle:Paymentform:payment.html.twig', array(
-			'totalPrice' => $totalPrice,
-			'ticketType' => $ticketType,
-			'totalVisitor' => $totalVisitor,
-			'priceStripe' => $priceStripe,
-			'dateOfBooking' => $dateOfBooking,
-			'bookingEmail' => $bookingEmail,
-		));
-		}
-
-	public function checkoutAction(Request $request)
-		{
-		$session = $this->get('session');
-		$nom_visitors = $session->get('tableauNom');
-		$totalPrice = $session->get('totalPrice');
+{
+    public function paymentAction()
+    {
+        $session = $this->get('session');
         $idDay = $session->get('idDay');
-        $bookingform= $session->get('idBooking');
-		$repository = $this->getDoctrine()->getRepository(Day::class);
+        $reservedPlace = $session->get('reservedPlace');
+        $totalPrice = $session->get('totalPrice');
+        $ticketType = $session->get('ticketType');
+        $totalVisitor = $session->get('totalVisitor');
+        $bookingEmail = $session->get('bookingEmail');
+		$priceStripe = $totalPrice * 100;
+		
+        $repository = $this->getDoctrine()
+            ->getRepository(Day::class);
 
 		$entityDay = $repository->findOneById($idDay);
-		$dateOfBooking = $entityDay->getDate();
-		\Stripe\Stripe::setApiKey("sk_test_Fl54zfWhryvZ0caH73XVBY2X");
+        $dateOfBooking = $entityDay->getDate();
+        return $this->render('OCBookingBundle:Paymentform:payment.html.twig', array(
+            'totalPrice' => $totalPrice,
+            'ticketType' => $ticketType,
+            'totalVisitor' => $totalVisitor,
+            'priceStripe' => $priceStripe,
+            'dateOfBooking' => $dateOfBooking,
+            'bookingEmail' => $bookingEmail,
+        ));
+    }
 
-		// Get the credit card details submitted by the form
+    public function checkoutAction(Request $request)
+    {
+        $session = $this->get('session');
+        $nom_visitors = $session->get('tableauNom');
+        $totalPrice = $session->get('totalPrice');
+        $idDay = $session->get('idDay');
+        $bookingform = $session->get('idBooking');
+        $repository = $this->getDoctrine()
+            ->getRepository(Day::class);
 
-		$token = $_POST['stripeToken'];
+        $entityDay = $repository->findOneById($idDay);
+        $dateOfBooking = $entityDay->getDate();
+        \Stripe\Stripe::setApiKey("sk_test_Fl54zfWhryvZ0caH73XVBY2X");
 
-		// Create a charge: this will charge the user's card
+        $token = $_POST['stripeToken'];
 
-		try
+        // Create a charge: this will charge the user's card
+        try
+        {
+            $charge = \Stripe\Charge::create(array(
+                "amount" => $session->get('totalPrice') * 100, // Amount in cents
+                "currency" => "eur",
+                "source" => $token,
+                "description" => "Paiement Stripe - OpenClassrooms Exemple"
+            ));
+			
+			// generate commande number
+			function random_number(){
+			$caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			$longueurMax = strlen($caracteres);
+			$chaineAleatoire = '';
+			for ($i = 0; $i < 10; $i++)
 			{
-			$charge = \Stripe\Charge::create(array(
-				"amount" => $session->get('totalPrice') * 100, // Amount in cents
-				"currency" => "eur",
-				"source" => $token,
-				"description" => "Paiement Stripe - OpenClassrooms Exemple"
-			));
-            // validé la commande 
-            $em = $this->getDoctrine()->getManager();
-            $bookingform->setValidatedOrder(true);
-            $bookingform->setOrderNumber($token);
+			$chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
+			}
+				return $chaineAleatoire;
+			}	
 
+			$command_number = random_number();
+			// command check
+            $em = $this->getDoctrine()
+                ->getManager();
+			$bookingform->setValidatedOrder(true);
+			
+			// add command number on bookingform
+			$existing_order = $bookingform->getOrderNumber();
+			
+			if ( $existing_order == $command_number) {
+				$command_number = random_number();
+				$bookingform->setOrderNumber($command_number);
+			}
+			else
+			{
+				$bookingform->setOrderNumber($command_number);
+			}
 
+			// persist entity
             $em->persist($bookingform);
             $em->flush();
-			// envoie du mail de confirmation
-
-			$stripeEmail = $_POST['stripeEmail'];
-			$mailer = $this->get('mailer');
-			$message = (new \Swift_Message('Hello Email'));
-			$data = $message->embed(\Swift_Image::fromPath('images/logo_44-resized.png'));
-			$message->setFrom('alexhsave@gmail.com')->setTo($stripeEmail)->setBody($this->renderView('Emails/confirmation.html.twig', array(
-				'dateOfBooking' => $dateOfBooking,
+            // send confirmation mail
+            $stripeEmail = $_POST['stripeEmail'];
+            $mailer = $this->get('mailer');
+            $message = (new \Swift_Message('Hello Email'));
+            $data = $message->embed(\Swift_Image::fromPath('images/logo_44-resized.png'));
+            $message->setFrom('alexhsave@gmail.com')
+                ->setTo($stripeEmail)->setBody($this->renderView('Emails/confirmation.html.twig', array(
+                'dateOfBooking' => $dateOfBooking,
 				'imageSrc' => $data,
-			)) , 'text/html');
-			$mailer->send($message);
-			$this->addFlash("success", "Votre réservation à bien été prise en compte");
-			return $this->redirectToRoute("oc_booking_homepage");
-			}
+				'tableauNom' => $nom_visitors,
+				'numReservation' => $command_number,
+				'totalPrice' => $totalPrice,
+            )) , 'text/html');
+            $mailer->send($message);
+            $this->addFlash("success", "Votre réservation à bien été prise en compte");
+            return $this->redirectToRoute("oc_booking_homepage");
+        }
 
-		catch(\Stripe\Error\Card $e)
-			{
-			$this->addFlash("error", "Erreur lors du paiement, veuillez rÃ©essayer.");
-			return $this->redirectToRoute("oc_payment_form");
+        catch(\Stripe\Error\Card $e)
+        {
+            $this->addFlash("error", "Erreur lors du paiement, veuillez rÃ©essayer.");
+            return $this->redirectToRoute("oc_payment_form");
 
-			// The card has been declined
+            // The card has been declined
+            
+        }
+    }
+}
 
-			}
-		}
-	}

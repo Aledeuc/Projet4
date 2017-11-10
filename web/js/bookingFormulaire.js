@@ -29,16 +29,22 @@ $(function() {
     // bloquer les réservations à la journée après 14h
     $( ".js-datepicker" ).change(function() {
         var date = new Date();
-        var day = date.getDate();
         var hour = date.getHours();
+        var daySelected = $(this).datepicker('getDate');
 
-        var daySelected = $(this).datepicker('getDate').getDate();
+        // mise en forme jour sélectionner.
+        var day_datepicker = daySelected.getDate();
+        var month_datepicker  = daySelected.getMonth();
+        var year_datepicker = daySelected.getFullYear();
+        var date_datepicker = day_datepicker+ "-" + month_datepicker + "-" + year_datepicker;
 
-        console.log(daySelected);
-        console.log(day);
-        console.log(hour);
+        // today
+        var today_day = date.getDate();
+        var today_month = date.getMonth();
+        var today_year = date.getFullYear();
+        var today = today_day+ "-" + today_month+ "-" + today_year;
 
-        if ( (daySelected == day) && (hour >= 14) )
+        if ( (date_datepicker == today) && (hour > 14) )
         {
             $("#oc_bookingbundle_bookingform_ticketType").val('half');
             $("#oc_bookingbundle_bookingform_ticketType").prop('disabled', true);

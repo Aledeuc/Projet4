@@ -100,29 +100,6 @@ class Day
         return $this->place;
     }
 
-    /**
-     * Set full
-     *
-     * @param string $full
-     *
-     * @return Day
-     */
-    public function setFull($full)
-    {
-        $this->full = $full;
-
-        return $this;
-    }
-
-    /**
-     * Get full
-     *
-     * @return string
-     */
-    public function getFull()
-    {
-        return $this->full;
-    }
 
     /**
      * Constructor
