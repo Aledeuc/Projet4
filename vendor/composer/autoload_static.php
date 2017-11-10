@@ -30,6 +30,7 @@ class ComposerStaticInitce32f360f39707201d89a619cd8d8bbb
             'Symfony\\Polyfill\\Php70\\' => 23,
             'Symfony\\Polyfill\\Php56\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Apcu\\' => 22,
             'Symfony\\Component\\' => 18,
             'Symfony\\Bundle\\SwiftmailerBundle\\' => 33,
             'Symfony\\Bundle\\MonologBundle\\' => 29,
@@ -104,6 +105,10 @@ class ComposerStaticInitce32f360f39707201d89a619cd8d8bbb
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Apcu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-apcu',
         ),
         'Symfony\\Component\\' => 
         array (
@@ -283,6 +288,7 @@ class ComposerStaticInitce32f360f39707201d89a619cd8d8bbb
         'Locale' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/Locale.php',
         'NumberFormatter' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/NumberFormatter.php',
         'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
+        'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
         'SqlFormatter' => __DIR__ . '/..' . '/jdorn/sql-formatter/lib/SqlFormatter.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
     );

@@ -2,7 +2,7 @@ $(function() {
     //datepicker
     var jourFerie = ["1-11-2017","11-11-2017","25-12-2017","31-12-2017","1-1-2018","6-1-2018","13-2-2018","14-2-2018","1-4-2018","2-4-2018","1-5-2018","8-5-2018","10-5-2018","20-5-2018","21-5-2018","14-7-2018","15-8-2018","1-11-2018","11-11-2018","25-12-2018","31-12-2018"];
 
-    $( ".js-datepicker" ).datepicker({
+    $( ".js-datepicker" ).datepicker ({
         altField: ".js-datepicker",
         closeText: 'Fermer',
         prevText: 'Précédent',
@@ -16,47 +16,51 @@ $(function() {
         weekHeader: 'Sem.',
         dateFormat: 'dd/mm/yy',
         minDate: 0, // impossible de séléctionner un jour passé
-        beforeShowDay: function(date) {
+        beforeShowDay: function(date) 
+        {
             var day = date.getDay();
             var string = jQuery.datepicker.formatDate('d-m-yy', date);
             var isDisabled = ($.inArray(string, jourFerie) != -1);
             return [day != 0 && !isDisabled];
-        } // impossible de séléctionner dimanche
-        });      
+        }// impossible de séléctionner dimanche
+    });  
 
-        // bouton add visitor et génération formulaire visitor
+    $( ".js-datepicker" ).change(function() {
+        alert( "Handler for .change() called." );
+      });
+
+    // bouton add visitor et génération formulaire visitor
     var $newLinkLi = $('<li></li>');
     var $collectionHolder = $('ul.visitors');
     $collectionHolder.append($newLinkLi);
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
-    $(".addVisitor").click( function(e) {
-        e.preventDefault();
-        
-        var count = $('<li>').length;
-
-        addTagForm($collectionHolder, $newLinkLi);
-    });
-    
-});
-  
-
-function addTagForm($collectionHolder, $newLinkLi) {
-    var prototype = $collectionHolder.data('prototype');
-    var index = $collectionHolder.data('index');
-    var newForm = prototype.replace(/__name__/g, index);
-    $collectionHolder.data('index', index + 1);
-    var $newFormLi = $('<li></li>').append(newForm);
-    $newLinkLi.before($newFormLi);
-    $newFormLi.append('<button href="#" class="removeTag">X</button>');
+        $(".addVisitor").click(function(e) 
+        {
+            e.preventDefault();
+            addTagForm($collectionHolder, $newLinkLi);
+        });
     
     
-    $('.removeTag').click(function(e) {
-        e.preventDefault();
-        
-        $(this).parent().remove();
-        
-        return false;
-    });
+    function addTagForm($collectionHolder, $newLinkLi) 
+    {
+        var prototype = $collectionHolder.data('prototype');
+        var index = $collectionHolder.data('index');
+        var newForm = prototype.replace(/__name__/g, index);
+        $collectionHolder.data('index', index + 1);
+        var $newFormLi = $('<li></li>').append(newForm);
+        $newLinkLi.before($newFormLi);
+        $newFormLi.append('<button href="#" class="removeTag">X</button>');
+    
+    
+        $('.removeTag').click(function(e) 
+        {
+            e.preventDefault();
+            
+            $(this).parent().remove();
+            
+            return false;
+        });
 
-}
+    }   
+})    

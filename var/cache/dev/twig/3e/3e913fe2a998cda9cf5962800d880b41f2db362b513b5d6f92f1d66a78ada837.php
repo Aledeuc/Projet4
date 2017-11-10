@@ -23,48 +23,48 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c0cf2447c371e9a807f75146602c3f0bbfa493a037710754a30d31c4b4e4f990 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c0cf2447c371e9a807f75146602c3f0bbfa493a037710754a30d31c4b4e4f990->enter($__internal_c0cf2447c371e9a807f75146602c3f0bbfa493a037710754a30d31c4b4e4f990_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
+        $__internal_1cb68fa7911bd8e4a732047fd9842c1b62abb701160e909878dc603151ee6eb4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1cb68fa7911bd8e4a732047fd9842c1b62abb701160e909878dc603151ee6eb4->enter($__internal_1cb68fa7911bd8e4a732047fd9842c1b62abb701160e909878dc603151ee6eb4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
 
-        $__internal_bba3479d2ea30caa9d35c861bc6c67f995c6a7218267d790bda22e79ba90c4ef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bba3479d2ea30caa9d35c861bc6c67f995c6a7218267d790bda22e79ba90c4ef->enter($__internal_bba3479d2ea30caa9d35c861bc6c67f995c6a7218267d790bda22e79ba90c4ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
+        $__internal_abbdbff825d67a86bc099a84ddd8687921b90ed4aa75b19e7f24c753ab5861bc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_abbdbff825d67a86bc099a84ddd8687921b90ed4aa75b19e7f24c753ab5861bc->enter($__internal_abbdbff825d67a86bc099a84ddd8687921b90ed4aa75b19e7f24c753ab5861bc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Bookingform:form.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c0cf2447c371e9a807f75146602c3f0bbfa493a037710754a30d31c4b4e4f990->leave($__internal_c0cf2447c371e9a807f75146602c3f0bbfa493a037710754a30d31c4b4e4f990_prof);
+        $__internal_1cb68fa7911bd8e4a732047fd9842c1b62abb701160e909878dc603151ee6eb4->leave($__internal_1cb68fa7911bd8e4a732047fd9842c1b62abb701160e909878dc603151ee6eb4_prof);
 
         
-        $__internal_bba3479d2ea30caa9d35c861bc6c67f995c6a7218267d790bda22e79ba90c4ef->leave($__internal_bba3479d2ea30caa9d35c861bc6c67f995c6a7218267d790bda22e79ba90c4ef_prof);
+        $__internal_abbdbff825d67a86bc099a84ddd8687921b90ed4aa75b19e7f24c753ab5861bc->leave($__internal_abbdbff825d67a86bc099a84ddd8687921b90ed4aa75b19e7f24c753ab5861bc_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_2948b964256433e91e0078a7552bcf963e1f09896f66e0b8b6630554ac5f50db = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_2948b964256433e91e0078a7552bcf963e1f09896f66e0b8b6630554ac5f50db->enter($__internal_2948b964256433e91e0078a7552bcf963e1f09896f66e0b8b6630554ac5f50db_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_75224b6572a360150f56c5df1c81090e1c8290ee22639710214ba5009ae6b24c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_75224b6572a360150f56c5df1c81090e1c8290ee22639710214ba5009ae6b24c->enter($__internal_75224b6572a360150f56c5df1c81090e1c8290ee22639710214ba5009ae6b24c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_ec1ed3f7fa84290a3fedbe8c9c408637b5302e270135f37c206c3b051fd46923 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ec1ed3f7fa84290a3fedbe8c9c408637b5302e270135f37c206c3b051fd46923->enter($__internal_ec1ed3f7fa84290a3fedbe8c9c408637b5302e270135f37c206c3b051fd46923_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_41f02fda465690cd47c6c260aaf4318d90fe1a780776a661903877b18861c2c0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_41f02fda465690cd47c6c260aaf4318d90fe1a780776a661903877b18861c2c0->enter($__internal_41f02fda465690cd47c6c260aaf4318d90fe1a780776a661903877b18861c2c0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         $this->displayParentBlock("title", $context, $blocks);
         echo " - Boutique";
         
-        $__internal_ec1ed3f7fa84290a3fedbe8c9c408637b5302e270135f37c206c3b051fd46923->leave($__internal_ec1ed3f7fa84290a3fedbe8c9c408637b5302e270135f37c206c3b051fd46923_prof);
+        $__internal_41f02fda465690cd47c6c260aaf4318d90fe1a780776a661903877b18861c2c0->leave($__internal_41f02fda465690cd47c6c260aaf4318d90fe1a780776a661903877b18861c2c0_prof);
 
         
-        $__internal_2948b964256433e91e0078a7552bcf963e1f09896f66e0b8b6630554ac5f50db->leave($__internal_2948b964256433e91e0078a7552bcf963e1f09896f66e0b8b6630554ac5f50db_prof);
+        $__internal_75224b6572a360150f56c5df1c81090e1c8290ee22639710214ba5009ae6b24c->leave($__internal_75224b6572a360150f56c5df1c81090e1c8290ee22639710214ba5009ae6b24c_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_793b22b5c4b2ea67daf5688070890fdc57112bd3e3e16c026b89b3b19e57de04 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_793b22b5c4b2ea67daf5688070890fdc57112bd3e3e16c026b89b3b19e57de04->enter($__internal_793b22b5c4b2ea67daf5688070890fdc57112bd3e3e16c026b89b3b19e57de04_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_04ac2924ac23a37137bb9204286e5eb488afe5f5e0a8895fa79c38e822038ac3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_04ac2924ac23a37137bb9204286e5eb488afe5f5e0a8895fa79c38e822038ac3->enter($__internal_04ac2924ac23a37137bb9204286e5eb488afe5f5e0a8895fa79c38e822038ac3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_0679462c2301ac314bd5156903bab18fe5c761cc0346d424cca4a5193a72aa3c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0679462c2301ac314bd5156903bab18fe5c761cc0346d424cca4a5193a72aa3c->enter($__internal_0679462c2301ac314bd5156903bab18fe5c761cc0346d424cca4a5193a72aa3c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_26f7c7de31d8756a988545c4bb89f561f39e0559a9f49d330d34ff098e25434d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_26f7c7de31d8756a988545c4bb89f561f39e0559a9f49d330d34ff098e25434d->enter($__internal_26f7c7de31d8756a988545c4bb89f561f39e0559a9f49d330d34ff098e25434d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
         echo "
@@ -135,10 +135,7 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "bookingemail", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
             </div>
-            
-            
-            
-                
+       
         </div>
         
         <div>
@@ -146,7 +143,7 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
         <h3>Visiteurs</h3>
 
         <ul class=\"visitors form-group\" data-prototype=\"";
-        // line 47
+        // line 44
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "visitors", array()), "vars", array()), "prototype", array()), 'widget'), "html_attr");
         echo "\"></ul>
             
@@ -154,50 +151,51 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
         </div>
 
         ";
-        // line 52
+        // line 49
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "save", array()), 'row');
         echo " 
         
         ";
-        // line 54
+        // line 51
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "_token", array()), 'widget');
         echo "
 
+
+        <p><font size=\"2\">* Il sera nécessaire de présenter votre carte d'étudiant, militaire ou équivalent lors de l'entrée au musée.</font></p>
 </div>
 
 
 ";
         
-        $__internal_0679462c2301ac314bd5156903bab18fe5c761cc0346d424cca4a5193a72aa3c->leave($__internal_0679462c2301ac314bd5156903bab18fe5c761cc0346d424cca4a5193a72aa3c_prof);
+        $__internal_26f7c7de31d8756a988545c4bb89f561f39e0559a9f49d330d34ff098e25434d->leave($__internal_26f7c7de31d8756a988545c4bb89f561f39e0559a9f49d330d34ff098e25434d_prof);
 
         
-        $__internal_793b22b5c4b2ea67daf5688070890fdc57112bd3e3e16c026b89b3b19e57de04->leave($__internal_793b22b5c4b2ea67daf5688070890fdc57112bd3e3e16c026b89b3b19e57de04_prof);
+        $__internal_04ac2924ac23a37137bb9204286e5eb488afe5f5e0a8895fa79c38e822038ac3->leave($__internal_04ac2924ac23a37137bb9204286e5eb488afe5f5e0a8895fa79c38e822038ac3_prof);
 
     }
 
-    // line 61
+    // line 60
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_34551c303e4b95725ee77a09aed9fec235484644b612e679663d1594026f765f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_34551c303e4b95725ee77a09aed9fec235484644b612e679663d1594026f765f->enter($__internal_34551c303e4b95725ee77a09aed9fec235484644b612e679663d1594026f765f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_b18c890ded85f10aa9f685097e7405e71c28e82081cc32a7238263354a37db63 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b18c890ded85f10aa9f685097e7405e71c28e82081cc32a7238263354a37db63->enter($__internal_b18c890ded85f10aa9f685097e7405e71c28e82081cc32a7238263354a37db63_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_732df90deac313b8aa88117845d84521d271a7d4bea0b3cf7d439e2f9bf93ace = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_732df90deac313b8aa88117845d84521d271a7d4bea0b3cf7d439e2f9bf93ace->enter($__internal_732df90deac313b8aa88117845d84521d271a7d4bea0b3cf7d439e2f9bf93ace_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_926f33bc19814aefedcbf27ac6178a494f627929814634fe7f754d20b867802a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_926f33bc19814aefedcbf27ac6178a494f627929814634fe7f754d20b867802a->enter($__internal_926f33bc19814aefedcbf27ac6178a494f627929814634fe7f754d20b867802a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         echo " 
 <script src=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js\"></script>
-<link rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css\">
 <script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
 <script src=\"";
-        // line 65
+        // line 63
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bookingFormulaire.js"), "html", null, true);
         echo "\"></script>
 ";
         
-        $__internal_732df90deac313b8aa88117845d84521d271a7d4bea0b3cf7d439e2f9bf93ace->leave($__internal_732df90deac313b8aa88117845d84521d271a7d4bea0b3cf7d439e2f9bf93ace_prof);
+        $__internal_926f33bc19814aefedcbf27ac6178a494f627929814634fe7f754d20b867802a->leave($__internal_926f33bc19814aefedcbf27ac6178a494f627929814634fe7f754d20b867802a_prof);
 
         
-        $__internal_34551c303e4b95725ee77a09aed9fec235484644b612e679663d1594026f765f->leave($__internal_34551c303e4b95725ee77a09aed9fec235484644b612e679663d1594026f765f_prof);
+        $__internal_b18c890ded85f10aa9f685097e7405e71c28e82081cc32a7238263354a37db63->leave($__internal_b18c890ded85f10aa9f685097e7405e71c28e82081cc32a7238263354a37db63_prof);
 
     }
 
@@ -213,7 +211,7 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
 
     public function getDebugInfo()
     {
-        return array (  193 => 65,  179 => 61,  163 => 54,  158 => 52,  150 => 47,  135 => 35,  130 => 33,  126 => 32,  123 => 31,  117 => 28,  112 => 26,  108 => 25,  105 => 24,  99 => 21,  94 => 19,  90 => 18,  87 => 17,  80 => 13,  75 => 11,  70 => 8,  61 => 7,  42 => 5,  11 => 3,);
+        return array (  191 => 63,  178 => 60,  160 => 51,  155 => 49,  147 => 44,  135 => 35,  130 => 33,  126 => 32,  123 => 31,  117 => 28,  112 => 26,  108 => 25,  105 => 24,  99 => 21,  94 => 19,  90 => 18,  87 => 17,  80 => 13,  75 => 11,  70 => 8,  61 => 7,  42 => 5,  11 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -262,10 +260,7 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
             <div class=\"col-sm-2\">
                 {{ form_widget(form.bookingemail, {'attr': {'class': 'form-control'}}) }}
             </div>
-            
-            
-            
-                
+       
         </div>
         
         <div>
@@ -281,6 +276,8 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
         
         {{ form_widget(form._token) }}
 
+
+        <p><font size=\"2\">* Il sera nécessaire de présenter votre carte d'étudiant, militaire ou équivalent lors de l'entrée au musée.</font></p>
 </div>
 
 
@@ -288,7 +285,6 @@ class __TwigTemplate_fb10d7853c4c90e28f5e759f56244dbdf4e5455c1854e91daa286cc4a74
 
 {% block javascripts %} 
 <script src=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js\"></script>
-<link rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css\">
 <script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
 <script src=\"{{ asset('js/bookingFormulaire.js') }}\"></script>
 {% endblock %}

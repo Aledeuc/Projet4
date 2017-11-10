@@ -27,12 +27,12 @@ class VisitorType extends AbstractType
             'label'    => 'Prénom'))
         ->add('birthdate',      BirthdayType::class, array(
             'label'    => 'Date de naissance',
-            'format' => 'dd/MM/yyyy',
+            'format' => 'dd MM yyyy',
             ))
         ->add('country',      TextType::class, array(
             'label'    => 'Pays'))
         ->add('reducedPrice',      CheckboxType::class, array(
-            'label'    => 'Tarif réduit',
+            'label'    => 'Tarif réduit *',
             'required' => false,
         ));
     }

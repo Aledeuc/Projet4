@@ -14,6 +14,11 @@ class Day
 {
 
     /**
+    * @ORM\OneToMany(targetEntity="OC\BookingBundle\Entity\Bookingform", mappedBy="advert")
+    */
+    private $bookinforms; 
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -35,13 +40,6 @@ class Day
      * @ORM\Column(name="place", type="string", length=255)
      */
     private $place;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="full", type="boolean", length=255)
-     */
-    private $full;
 
 
     /**
@@ -174,5 +172,46 @@ class Day
     public function getBookingform()
     {
         return $this->bookingform;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->bookinforms = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add bookinform
+     *
+     * @param \OC\BookingBundle\Entity\Bookingform $bookinform
+     *
+     * @return Day
+     */
+    public function addBookinform(\OC\BookingBundle\Entity\Bookingform $bookinform)
+    {
+        $this->bookinforms[] = $bookinform;
+
+        return $this;
+    }
+
+    /**
+     * Remove bookinform
+     *
+     * @param \OC\BookingBundle\Entity\Bookingform $bookinform
+     */
+    public function removeBookinform(\OC\BookingBundle\Entity\Bookingform $bookinform)
+    {
+        $this->bookinforms->removeElement($bookinform);
+    }
+
+    /**
+     * Get bookinforms
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBookinforms()
+    {
+        return $this->bookinforms;
     }
 }

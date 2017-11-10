@@ -34,10 +34,7 @@
             <div class="col-sm-2">
                 {{ form_widget(form.bookingemail, {'attr': {'class': 'form-control'}}) }}
             </div>
-            
-            
-            
-                
+       
         </div>
         
         <div>
@@ -53,6 +50,8 @@
         
         {{ form_widget(form._token) }}
 
+
+        <p><font size="2">* Il sera nécessaire de présenter votre carte d'étudiant, militaire ou équivalent lors de l'entrée au musée.</font></p>
 </div>
 
 
@@ -60,7 +59,6 @@
 
 {% block javascripts %} 
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="{{ asset('js/bookingFormulaire.js') }}"></script>
 {% endblock %}

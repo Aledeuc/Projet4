@@ -9,3 +9,8 @@ oc_booking_form:
 oc_payment_form:
     path:    /museedulouvre.fr/paiement
     defaults: { _controller: OCBookingBundle:Paymentform:payment }
+
+order_checkout:
+    path:    /museedulouvre.fr/checkout
+    defaults: { _controller: OCBookingBundle:Paymentform:checkout }
+

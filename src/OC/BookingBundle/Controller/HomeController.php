@@ -16,15 +16,4 @@ class HomeController extends Controller
 
     }
 
-    # Version Anglaise
-
-    public function indexEnAction()
-    {
-        $content = $this->get('templating')->render('OCBookingBundle:Home:indexEn.html.twig');
-
-        return new Response($content);
-    }
-
-
-    // Recupère paramètre POST : $request->request
 }

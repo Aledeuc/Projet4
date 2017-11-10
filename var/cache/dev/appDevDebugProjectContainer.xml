@@ -103,10 +103,10 @@
     <parameter key="database_name">louvre</parameter>
     <parameter key="database_user">adm</parameter>
     <parameter key="database_password">adm</parameter>
-    <parameter key="mailer_transport">smtp</parameter>
-    <parameter key="mailer_host">smtp-mail.outlook.com</parameter>
-    <parameter key="mailer_user">ahirschmuller@outlook.com</parameter>
-    <parameter key="mailer_password">11CaRo11!</parameter>
+    <parameter key="mailer_transport">gmail</parameter>
+    <parameter key="mailer_host">smtp.gmail.com</parameter>
+    <parameter key="mailer_user">alexhsave@gmail.com</parameter>
+    <parameter key="mailer_password">11caro11!</parameter>
     <parameter key="secret">d05bbd5c56dcb863ce145929fb0f54c67dcff7c4</parameter>
     <parameter key="enfant_moins_4">0</parameter>
     <parameter key="enfant_4_a_12">8</parameter>
@@ -205,12 +205,12 @@
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp-mail.outlook.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">ahirschmuller@outlook.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">11CaRo11!</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">alexhsave@gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">11caro11!</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
@@ -416,6 +416,10 @@
     </parameter>
     <parameter key="console.command.ids" type="collection">
       <parameter key="console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand">console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand</parameter>
+      <parameter key="console.command.doctrine_bundle_doctrinecachebundle_command_containscommand">doctrine_cache.contains_command</parameter>
+      <parameter key="console.command.doctrine_bundle_doctrinecachebundle_command_deletecommand">doctrine_cache.delete_command</parameter>
+      <parameter key="console.command.doctrine_bundle_doctrinecachebundle_command_flushcommand">doctrine_cache.flush_command</parameter>
+      <parameter key="console.command.doctrine_bundle_doctrinecachebundle_command_statscommand">doctrine_cache.stats_command</parameter>
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_createdatabasedoctrinecommand">doctrine.database_create_command</parameter>
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_dropdatabasedoctrinecommand">doctrine.database_drop_command</parameter>
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_generateentitiesdoctrinecommand">doctrine.generate_entities_command</parameter>
@@ -437,6 +441,7 @@
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_proxy_updateschemadoctrinecommand">doctrine.schema_update_command</parameter>
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_proxy_validateschemacommand">doctrine.schema_validate_command</parameter>
       <parameter key="console.command.sensiolabs_security_command_securitycheckercommand">sensio_distribution.security_checker.command</parameter>
+      <parameter key="console.command.doctrine_bundle_fixturesbundle_command_loaddatafixturesdoctrinecommand">doctrine.fixtures_load_command</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverruncommand">console.command.symfony_bundle_webserverbundle_command_serverruncommand</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstartcommand">console.command.symfony_bundle_webserverbundle_command_serverstartcommand</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstopcommand">console.command.symfony_bundle_webserverbundle_command_serverstopcommand</parameter>
@@ -629,7 +634,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
+      <argument>LyKRIFBv2h4B-a+lULL1G5</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -639,7 +644,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
+      <argument>LyKRIFBv2h4B-a+lULL1G5</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2181,12 +2186,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>59f726e3264301.41348119</argument>
+      <argument>5a008dec2c5ea2.80383414</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>59f726e3264301.41348119</argument>
+      <argument>5a008dec2c5ea2.80383414</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2651,13 +2656,13 @@
         <argument type="service" id="3_becba1883f1a462b8f4b775a1b7502a20f22f9b90f3638bc175aec9b6aac02ad"/>
       </argument>
       <call method="setUsername">
-        <argument>ahirschmuller@outlook.com</argument>
+        <argument>alexhsave@gmail.com</argument>
       </call>
       <call method="setPassword">
-        <argument>11CaRo11!</argument>
+        <argument>11caro11!</argument>
       </call>
       <call method="setAuthMode">
-        <argument>null</argument>
+        <argument>login</argument>
       </call>
     </service>
     <service id="swiftmailer.mailer.default.transport.buffer" class="Swift_Transport_StreamBuffer" public="false">
@@ -2674,13 +2679,13 @@
       </argument>
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
       <call method="setHost">
-        <argument>smtp-mail.outlook.com</argument>
+        <argument>smtp.gmail.com</argument>
       </call>
       <call method="setPort">
-        <argument>25</argument>
+        <argument>465</argument>
       </call>
       <call method="setEncryption">
-        <argument>null</argument>
+        <argument>ssl</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>
@@ -2722,6 +2727,18 @@
     <service id="doctrine_cache.abstract.wincache" class="Doctrine\Common\Cache\WinCacheCache" abstract="true"/>
     <service id="doctrine_cache.abstract.xcache" class="Doctrine\Common\Cache\XcacheCache" abstract="true"/>
     <service id="doctrine_cache.abstract.zenddata" class="Doctrine\Common\Cache\ZendDataCache" abstract="true"/>
+    <service id="doctrine_cache.contains_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\ContainsCommand">
+      <tag name="console.command"/>
+    </service>
+    <service id="doctrine_cache.delete_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\DeleteCommand">
+      <tag name="console.command"/>
+    </service>
+    <service id="doctrine_cache.flush_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\FlushCommand">
+      <tag name="console.command"/>
+    </service>
+    <service id="doctrine_cache.stats_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\StatsCommand">
+      <tag name="console.command"/>
+    </service>
     <service id="doctrine.dbal.logger.chain" class="Doctrine\DBAL\Logging\LoggerChain" public="false" abstract="true">
       <call method="addLogger">
         <argument type="service" id="doctrine.dbal.logger"/>
@@ -3216,6 +3233,9 @@
       <tag name="console.command"/>
       <argument type="service" id="sensio_distribution.security_checker"/>
     </service>
+    <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
+      <tag name="console.command" command="doctrine:fixtures:load"/>
+    </service>
     <service id="web_server.command.server_run" class="Symfony\Bundle\WebServerBundle\Command\ServerRunCommand" public="false">
       <tag name="console.command"/>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/public</argument>
@@ -3448,7 +3468,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>IBhlGcNsJZ</argument>
       <argument>0</argument>
-      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
+      <argument>LyKRIFBv2h4B-a+lULL1G5</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3456,7 +3476,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Q12vwMYRlr</argument>
       <argument>0</argument>
-      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
+      <argument>LyKRIFBv2h4B-a+lULL1G5</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3464,7 +3484,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>RPm00JQ+NM</argument>
       <argument>0</argument>
-      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
+      <argument>LyKRIFBv2h4B-a+lULL1G5</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3472,7 +3492,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>LAkSQIHoG2</argument>
       <argument>0</argument>
-      <argument>brrsOZTT-sRQd2kYlROdUi</argument>
+      <argument>LyKRIFBv2h4B-a+lULL1G5</argument>
       <argument>/Users/alexandre/Google Drive/Pro/Github/Projet4/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

@@ -5,14 +5,13 @@ parameters:
     database_name: louvre
     database_user: adm
     database_password: adm
-    mailer_transport: smtp
-    mailer_host: smtp-mail.outlook.com
-    mailer_user: ahirschmuller@outlook.com
-    mailer_password: 11CaRo11!
+    mailer_transport: gmail
+    mailer_host: smtp.gmail.com
+    mailer_user: alexhsave@gmail.com
+    mailer_password: 11caro11!
     secret: d05bbd5c56dcb863ce145929fb0f54c67dcff7c4
     enfant_moins_4: 0
     enfant_4_a_12: 8
     personne_12_a_60: 16
     personne_plus_60: 12
     personne_reduit: 10
-    

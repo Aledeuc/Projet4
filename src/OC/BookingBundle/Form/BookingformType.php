@@ -51,7 +51,6 @@ class BookingformType extends AbstractType
                 'label' => 'Réserver',
                 'attr' => array(
                 'class' =>  'saveButton',
-                'href' => "{{ path('oc_payment_form') }}",
                 )));
     }
     

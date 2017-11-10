@@ -11,7 +11,7 @@ class __TwigTemplate_b047f1426fe5e76e8a4b1c3afe6691ce7291f31c1b608deff064bf4f433
         $this->parent = $this->loadTemplate("OCBookingBundle::layout.html.twig", "OCBookingBundle:Paymentform:payment.html.twig", 3);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'body' => array($this, 'block_body'),
+            'ocbooking_body' => array($this, 'block_ocbooking_body'),
             'javascripts' => array($this, 'block_javascripts'),
         );
     }
@@ -23,99 +23,139 @@ class __TwigTemplate_b047f1426fe5e76e8a4b1c3afe6691ce7291f31c1b608deff064bf4f433
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4ed85d31d8918654c7659ddc66274bd5188231ff88c0a28a32b47e9cf8ff21ca = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_4ed85d31d8918654c7659ddc66274bd5188231ff88c0a28a32b47e9cf8ff21ca->enter($__internal_4ed85d31d8918654c7659ddc66274bd5188231ff88c0a28a32b47e9cf8ff21ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Paymentform:payment.html.twig"));
+        $__internal_0fae52645d6054ace1cde74fb5d4686c25c77a22b96a9a5844f6a437420791a7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0fae52645d6054ace1cde74fb5d4686c25c77a22b96a9a5844f6a437420791a7->enter($__internal_0fae52645d6054ace1cde74fb5d4686c25c77a22b96a9a5844f6a437420791a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Paymentform:payment.html.twig"));
 
-        $__internal_9950245b801483dbae6de0aca2eebf4a19d04dee39b79dceb1f5ef011c559a6a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9950245b801483dbae6de0aca2eebf4a19d04dee39b79dceb1f5ef011c559a6a->enter($__internal_9950245b801483dbae6de0aca2eebf4a19d04dee39b79dceb1f5ef011c559a6a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Paymentform:payment.html.twig"));
+        $__internal_c6840c98e56d53a5cfbc8177e0e434215a44a6a8d1cc4d74546247abd5cee19f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c6840c98e56d53a5cfbc8177e0e434215a44a6a8d1cc4d74546247abd5cee19f->enter($__internal_c6840c98e56d53a5cfbc8177e0e434215a44a6a8d1cc4d74546247abd5cee19f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCBookingBundle:Paymentform:payment.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_4ed85d31d8918654c7659ddc66274bd5188231ff88c0a28a32b47e9cf8ff21ca->leave($__internal_4ed85d31d8918654c7659ddc66274bd5188231ff88c0a28a32b47e9cf8ff21ca_prof);
+        $__internal_0fae52645d6054ace1cde74fb5d4686c25c77a22b96a9a5844f6a437420791a7->leave($__internal_0fae52645d6054ace1cde74fb5d4686c25c77a22b96a9a5844f6a437420791a7_prof);
 
         
-        $__internal_9950245b801483dbae6de0aca2eebf4a19d04dee39b79dceb1f5ef011c559a6a->leave($__internal_9950245b801483dbae6de0aca2eebf4a19d04dee39b79dceb1f5ef011c559a6a_prof);
+        $__internal_c6840c98e56d53a5cfbc8177e0e434215a44a6a8d1cc4d74546247abd5cee19f->leave($__internal_c6840c98e56d53a5cfbc8177e0e434215a44a6a8d1cc4d74546247abd5cee19f_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_076c2731e833c1dc1f0acd6d7eab7168ef0879422383913f4fa5f30216d119f4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_076c2731e833c1dc1f0acd6d7eab7168ef0879422383913f4fa5f30216d119f4->enter($__internal_076c2731e833c1dc1f0acd6d7eab7168ef0879422383913f4fa5f30216d119f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_4be6c8a09478bd6145cf3623b8461644d53c19ce4bd547284787b45a07a3028c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4be6c8a09478bd6145cf3623b8461644d53c19ce4bd547284787b45a07a3028c->enter($__internal_4be6c8a09478bd6145cf3623b8461644d53c19ce4bd547284787b45a07a3028c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_c8455ca6f771f08760acb2a01feaebf7576f46cc833d22cb9fe5435faa6cae9f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c8455ca6f771f08760acb2a01feaebf7576f46cc833d22cb9fe5435faa6cae9f->enter($__internal_c8455ca6f771f08760acb2a01feaebf7576f46cc833d22cb9fe5435faa6cae9f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_044b216b4f2bc0a7f58b73e09983468c3fdaf64848b1ee428a971c2011d0263b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_044b216b4f2bc0a7f58b73e09983468c3fdaf64848b1ee428a971c2011d0263b->enter($__internal_044b216b4f2bc0a7f58b73e09983468c3fdaf64848b1ee428a971c2011d0263b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         $this->displayParentBlock("title", $context, $blocks);
         echo " - Boutique";
         
-        $__internal_c8455ca6f771f08760acb2a01feaebf7576f46cc833d22cb9fe5435faa6cae9f->leave($__internal_c8455ca6f771f08760acb2a01feaebf7576f46cc833d22cb9fe5435faa6cae9f_prof);
+        $__internal_044b216b4f2bc0a7f58b73e09983468c3fdaf64848b1ee428a971c2011d0263b->leave($__internal_044b216b4f2bc0a7f58b73e09983468c3fdaf64848b1ee428a971c2011d0263b_prof);
 
         
-        $__internal_076c2731e833c1dc1f0acd6d7eab7168ef0879422383913f4fa5f30216d119f4->leave($__internal_076c2731e833c1dc1f0acd6d7eab7168ef0879422383913f4fa5f30216d119f4_prof);
+        $__internal_4be6c8a09478bd6145cf3623b8461644d53c19ce4bd547284787b45a07a3028c->leave($__internal_4be6c8a09478bd6145cf3623b8461644d53c19ce4bd547284787b45a07a3028c_prof);
 
     }
 
     // line 7
-    public function block_body($context, array $blocks = array())
+    public function block_ocbooking_body($context, array $blocks = array())
     {
-        $__internal_df5aae0375dd62e2c8cc0a335dbd428b615151bfa21c23429a6ae8b667ad81a3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_df5aae0375dd62e2c8cc0a335dbd428b615151bfa21c23429a6ae8b667ad81a3->enter($__internal_df5aae0375dd62e2c8cc0a335dbd428b615151bfa21c23429a6ae8b667ad81a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e7ff9c6cdc5104169317f7c0a73784b0025b70e3f672256cbb1f82cf0182fc4a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e7ff9c6cdc5104169317f7c0a73784b0025b70e3f672256cbb1f82cf0182fc4a->enter($__internal_e7ff9c6cdc5104169317f7c0a73784b0025b70e3f672256cbb1f82cf0182fc4a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "ocbooking_body"));
 
-        $__internal_d5bcec0608509e1f2865d320d5f1d5d1390802fb5dace694d9b1c4aa75efa65a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d5bcec0608509e1f2865d320d5f1d5d1390802fb5dace694d9b1c4aa75efa65a->enter($__internal_d5bcec0608509e1f2865d320d5f1d5d1390802fb5dace694d9b1c4aa75efa65a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0266c91368e31efb7271311c6e4dbad7a88327c1223af86a698601d5aafa4a95 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0266c91368e31efb7271311c6e4dbad7a88327c1223af86a698601d5aafa4a95->enter($__internal_0266c91368e31efb7271311c6e4dbad7a88327c1223af86a698601d5aafa4a95_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "ocbooking_body"));
 
-        // line 8
+        echo " 
+
+";
+        // line 9
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "flashes", array(0 => "error"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 10
+            echo "<div class=\"flash-error\">
+    ";
+            // line 11
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+</div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 14
         echo "
-<form action=\"/web/app_dev.php/museedulouvre.fr\" method=\"post\" id=\"payment-form\">
-  <div class=\"form-row\">
-    <label for=\"card-element\">
-      Carte bleu
-    </label>
-    <div id=\"card-element\">
-      <!-- a Stripe Element will be inserted here. -->
-    </div>
+<div class=\"recapitulatif_commande\">
 
-    <!-- Used to display form errors -->
-    <div id=\"card-errors\" role=\"alert\"></div>
-  </div>
+  <h2>Récapitulatif de commande :</h2>
 
-  <button class=\"paymentButton\">Payer</button>
+  <p>Vous souhaitez réserver ";
+        // line 19
+        echo twig_escape_filter($this->env, ($context["totalVisitor"] ?? $this->getContext($context, "totalVisitor")), "html", null, true);
+        echo " billets d'entrée à la ";
+        echo twig_escape_filter($this->env, ($context["ticketType"] ?? $this->getContext($context, "ticketType")), "html", null, true);
+        echo ", pour le ";
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, ($context["dateOfBooking"] ?? $this->getContext($context, "dateOfBooking")), "d/m/Y"), "html", null, true);
+        echo ".
+      Votre facture est de ";
+        // line 20
+        echo twig_escape_filter($this->env, ($context["totalPrice"] ?? $this->getContext($context, "totalPrice")), "html", null, true);
+        echo " € </p>
 
+</div>
+
+<form action=\"";
+        // line 24
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("order_checkout");
+        echo "\" method=\"POST\" id=\"payment-form\">
+    <script
+    src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
+    data-key=\"pk_test_WYvpEHPHdIksCPWlOKjoGN3P\"
+    data-email=\"";
+        // line 28
+        echo twig_escape_filter($this->env, ($context["bookingEmail"] ?? $this->getContext($context, "bookingEmail")), "html", null, true);
+        echo "\"
+    data-amount=\"";
+        // line 29
+        echo twig_escape_filter($this->env, ($context["priceStripe"] ?? $this->getContext($context, "priceStripe")), "html", null, true);
+        echo "\"
+    data-name=\"Musée du Louvre\"
+    data-description=\"Billet de réservation\"
+    data-locale=\"auto\"
+    data-currency=\"eur\">
+  </script>
 
 </form>
 
+
 ";
         
-        $__internal_d5bcec0608509e1f2865d320d5f1d5d1390802fb5dace694d9b1c4aa75efa65a->leave($__internal_d5bcec0608509e1f2865d320d5f1d5d1390802fb5dace694d9b1c4aa75efa65a_prof);
+        $__internal_0266c91368e31efb7271311c6e4dbad7a88327c1223af86a698601d5aafa4a95->leave($__internal_0266c91368e31efb7271311c6e4dbad7a88327c1223af86a698601d5aafa4a95_prof);
 
         
-        $__internal_df5aae0375dd62e2c8cc0a335dbd428b615151bfa21c23429a6ae8b667ad81a3->leave($__internal_df5aae0375dd62e2c8cc0a335dbd428b615151bfa21c23429a6ae8b667ad81a3_prof);
+        $__internal_e7ff9c6cdc5104169317f7c0a73784b0025b70e3f672256cbb1f82cf0182fc4a->leave($__internal_e7ff9c6cdc5104169317f7c0a73784b0025b70e3f672256cbb1f82cf0182fc4a_prof);
 
     }
 
-    // line 29
+    // line 41
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_e1df65e1cdfdb4dc68adb58c526ea3a446a21080bb0ea889493f22e00809bcc8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_e1df65e1cdfdb4dc68adb58c526ea3a446a21080bb0ea889493f22e00809bcc8->enter($__internal_e1df65e1cdfdb4dc68adb58c526ea3a446a21080bb0ea889493f22e00809bcc8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_0254543b540911a2160ba62c1423cbe9f2981f1112d753d44cea5d17fec02aae = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0254543b540911a2160ba62c1423cbe9f2981f1112d753d44cea5d17fec02aae->enter($__internal_0254543b540911a2160ba62c1423cbe9f2981f1112d753d44cea5d17fec02aae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_9c73e274a3c463c97301ee6a2008bc92b5dc95d85d50a2789ae26871d137ac7b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9c73e274a3c463c97301ee6a2008bc92b5dc95d85d50a2789ae26871d137ac7b->enter($__internal_9c73e274a3c463c97301ee6a2008bc92b5dc95d85d50a2789ae26871d137ac7b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_59aabcfbb87e6ea7f9a028c1e042e2c44330608c92b165cd9188bcf28dfecc86 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_59aabcfbb87e6ea7f9a028c1e042e2c44330608c92b165cd9188bcf28dfecc86->enter($__internal_59aabcfbb87e6ea7f9a028c1e042e2c44330608c92b165cd9188bcf28dfecc86_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         echo " 
-<script src=\"https://js.stripe.com/v3/\"></script>
-<script src=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/stripeForm.js"), "html", null, true);
-        echo "\"></script>
+
 ";
         
-        $__internal_9c73e274a3c463c97301ee6a2008bc92b5dc95d85d50a2789ae26871d137ac7b->leave($__internal_9c73e274a3c463c97301ee6a2008bc92b5dc95d85d50a2789ae26871d137ac7b_prof);
+        $__internal_59aabcfbb87e6ea7f9a028c1e042e2c44330608c92b165cd9188bcf28dfecc86->leave($__internal_59aabcfbb87e6ea7f9a028c1e042e2c44330608c92b165cd9188bcf28dfecc86_prof);
 
         
-        $__internal_e1df65e1cdfdb4dc68adb58c526ea3a446a21080bb0ea889493f22e00809bcc8->leave($__internal_e1df65e1cdfdb4dc68adb58c526ea3a446a21080bb0ea889493f22e00809bcc8_prof);
+        $__internal_0254543b540911a2160ba62c1423cbe9f2981f1112d753d44cea5d17fec02aae->leave($__internal_0254543b540911a2160ba62c1423cbe9f2981f1112d753d44cea5d17fec02aae_prof);
 
     }
 
@@ -131,7 +171,7 @@ class __TwigTemplate_b047f1426fe5e76e8a4b1c3afe6691ce7291f31c1b608deff064bf4f433
 
     public function getDebugInfo()
     {
-        return array (  111 => 31,  99 => 29,  70 => 8,  61 => 7,  42 => 5,  11 => 3,);
+        return array (  143 => 41,  122 => 29,  118 => 28,  111 => 24,  104 => 20,  96 => 19,  89 => 14,  80 => 11,  77 => 10,  73 => 9,  61 => 7,  42 => 5,  11 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -150,31 +190,42 @@ class __TwigTemplate_b047f1426fe5e76e8a4b1c3afe6691ce7291f31c1b608deff064bf4f433
 
 {% block title %}{{ parent () }} - Boutique{% endblock %}
 
-{% block body %}
+{% block ocbooking_body %} 
 
-<form action=\"/web/app_dev.php/museedulouvre.fr\" method=\"post\" id=\"payment-form\">
-  <div class=\"form-row\">
-    <label for=\"card-element\">
-      Carte bleu
-    </label>
-    <div id=\"card-element\">
-      <!-- a Stripe Element will be inserted here. -->
-    </div>
+{% for message in app.flashes('error') %}
+<div class=\"flash-error\">
+    {{ message }}
+</div>
+{% endfor %}
 
-    <!-- Used to display form errors -->
-    <div id=\"card-errors\" role=\"alert\"></div>
-  </div>
+<div class=\"recapitulatif_commande\">
 
-  <button class=\"paymentButton\">Payer</button>
+  <h2>Récapitulatif de commande :</h2>
 
+  <p>Vous souhaitez réserver {{ totalVisitor }} billets d'entrée à la {{ ticketType }}, pour le {{ dateOfBooking|date('d/m/Y') }}.
+      Votre facture est de {{ totalPrice }} € </p>
+
+</div>
+
+<form action=\"{{ path('order_checkout') }}\" method=\"POST\" id=\"payment-form\">
+    <script
+    src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
+    data-key=\"pk_test_WYvpEHPHdIksCPWlOKjoGN3P\"
+    data-email=\"{{ bookingEmail }}\"
+    data-amount=\"{{ priceStripe }}\"
+    data-name=\"Musée du Louvre\"
+    data-description=\"Billet de réservation\"
+    data-locale=\"auto\"
+    data-currency=\"eur\">
+  </script>
 
 </form>
+
 
 {% endblock %}
 
 {% block javascripts %} 
-<script src=\"https://js.stripe.com/v3/\"></script>
-<script src=\"{{ asset('js/stripeForm.js') }}\"></script>
+
 {% endblock %}", "OCBookingBundle:Paymentform:payment.html.twig", "/Users/alexandre/Google Drive/Pro/Github/Projet4/src/OC/BookingBundle/Resources/views/Paymentform/payment.html.twig");
     }
 }

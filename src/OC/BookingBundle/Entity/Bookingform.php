@@ -72,14 +72,6 @@ class Bookingform
      */
     private $visitors;
 
-    /**
-     * @var Visitor
-     * 
-     * @Assert\Valid()
-     * @ORM\ManyToMany(targetEntity="OC\BookingBundle\Entity\Day",  cascade={"persist"})
-     */
-    private $days;
-
 
     /**
      * Constructor

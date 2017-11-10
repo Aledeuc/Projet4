@@ -116,7 +116,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             // oc_payment_form
             if ('/museedulouvre.fr/paiement' === $pathinfo) {
-                return array (  '_controller' => 'OCBookingBundle:Paymentform:payment',  '_route' => 'oc_payment_form',);
+                return array (  '_controller' => 'OC\\BookingBundle\\Controller\\PaymentformController::paymentAction',  '_route' => 'oc_payment_form',);
+            }
+
+            // order_checkout
+            if ('/museedulouvre.fr/checkout' === $pathinfo) {
+                return array (  '_controller' => 'OC\\BookingBundle\\Controller\\PaymentformController::checkoutAction',  '_route' => 'order_checkout',);
             }
 
         }
