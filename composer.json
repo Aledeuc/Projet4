@@ -1,5 +1,6 @@
 {
     "name": "alexandre/symfony",
+    "description": "Projet 4 OC",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -37,6 +38,7 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^2.4",
         "sensio/generator-bundle": "^3.0",
+        "squizlabs/php_codesniffer": "^3.1",
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {

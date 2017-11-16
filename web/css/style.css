@@ -138,6 +138,7 @@ body
       background-color: #3c3c3c;
       color: white;
       margin-top: 50px;
+      padding-top: 20px;
   }
 
   .saveButton, .addVisitor, .paymentButton, .removeTag
@@ -220,8 +221,10 @@ body
 {
     position: relative;
     font-family: Georgia, sans-serif;
-    font-size: 1.3em;
-    padding: 0.5em;
+    font-size: 1.2em;
+    padding-top: 0.5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     margin-top: 35px;
     right: -400px;
 	width:300px;
