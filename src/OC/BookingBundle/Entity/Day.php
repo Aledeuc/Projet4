@@ -1,5 +1,4 @@
 <?php
-
 namespace OC\BookingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -14,9 +13,9 @@ class Day
 {
 
     /**
-    * @ORM\OneToMany(targetEntity="OC\BookingBundle\Entity\Bookingform", mappedBy="day")
-    */
-    private $bookingforms; 
+     * @ORM\OneToMany(targetEntity="OC\BookingBundle\Entity\Bookingform", mappedBy="day")
+     */
+    private $bookingforms;
 
     /**
      * @var int
@@ -40,7 +39,6 @@ class Day
      * @ORM\Column(name="place", type="string", length=255)
      */
     private $place;
-
 
     /**
      * Get id
@@ -100,7 +98,6 @@ class Day
         return $this->place;
     }
 
-
     /**
      * Constructor
      */
@@ -130,7 +127,9 @@ class Day
      */
     public function removeBookingform(\OC\BookingBundle\Entity\Bookingform $bookingform)
     {
-        $this->bookingforms->removeElement($bookingform);
+        $this
+            ->bookingforms
+            ->removeElement($bookingform);
     }
 
     /**

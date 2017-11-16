@@ -1,7 +1,5 @@
 <?php
-
 // src/BookingBundle/Form/VisitorType.php
-
 namespace OC\BookingBundle\Form;
 
 use BookingBundle\Entity\Visitor;
@@ -12,7 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
-
 class VisitorType extends AbstractType
 {
     /**
@@ -20,23 +17,31 @@ class VisitorType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-        ->add('name',       TextType::class, array(
-            'label'    => 'Nom'))
-        ->add('firstname',      TextType::class, array(
-            'label'    => 'Prénom'))
-        ->add('birthdate',      BirthdayType::class, array(
-            'label'    => 'Date de naissance',
+        $builder->add('name', TextType::class , array(
+            'label' => 'Nom',
+            'attr'   =>  array(
+                'class'   => 'visitorForm')
+        ))
+            ->add('firstname', TextType::class , array(
+            'label' => 'Prénom',
+            'attr'   =>  array(
+                'class'   => 'visitorForm')
+        ))
+            ->add('birthdate', BirthdayType::class , array(
+            'label' => 'Date de naissance',
             'format' => 'dd MM yyyy',
-            ))
-        ->add('country',      TextType::class, array(
-            'label'    => 'Pays'))
-        ->add('reducedPrice',      CheckboxType::class, array(
-            'label'    => 'Tarif réduit *',
+        ))
+            ->add('country', TextType::class , array(
+            'label' => 'Pays',
+            'attr'   =>  array(
+                'class'   => 'visitorForm')
+        ))
+            ->add('reducedPrice', CheckboxType::class , array(
+            'label' => 'Tarif réduit *',
             'required' => false,
         ));
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -54,6 +59,5 @@ class VisitorType extends AbstractType
     {
         return 'oc_bookingbundle_visitor';
     }
-
 
 }

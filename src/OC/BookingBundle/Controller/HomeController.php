@@ -1,6 +1,5 @@
 <?php
-
-// src/OC/BookingBundle/Controller/HomeController.php 
+// src/OC/BookingBundle/Controller/HomeController.php
 
 
 namespace OC\BookingBundle\Controller;

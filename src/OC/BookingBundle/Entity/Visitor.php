@@ -1,5 +1,4 @@
 <?php
-
 namespace OC\BookingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -56,8 +55,6 @@ class Visitor
      * @ORM\Column(name="reduced_price", type="boolean")
      */
     private $reducedPrice;
-
-
 
     /**
      * Get id
@@ -164,7 +161,7 @@ class Visitor
     {
         return $this->country;
     }
-    
+
     /**
      * Set reducedPrice
      *
@@ -194,23 +191,18 @@ class Visitor
         // calculer l'âge du visitor
         $date = $this->getBirthdate();
         $age = date('Y') - $date->format('Y');
-        
-        if (date('md') < $date->format('md')) 
+
+        if (date('md') < $date->format('md'))
         {
             $age = $age - 1;
         }
         //calcul le prix du visitor
-        $reduced_price = $this->getReducedPrice(); 
+        $reduced_price = $this->getReducedPrice();
 
-        if  ( $reduced_price == 1) 
-            return $container->getParameter('personne_reduit');
-        elseif ($age < 4)     
-            return $container->getParameter('enfant_moins_4');
-        elseif ($age <= 12)
-            return $container->getParameter('enfant_4_a_12');
-        elseif ($age <= 60)
-            return $container->getParameter('personne_12_a_60');
-        elseif ($age > 60 )
-            return $container->getParameter('personne_plus_60');
+        if ($reduced_price == 1) return $container->getParameter('personne_reduit');
+        elseif ($age < 4) return $container->getParameter('enfant_moins_4');
+        elseif ($age <= 12) return $container->getParameter('enfant_4_a_12');
+        elseif ($age <= 60) return $container->getParameter('personne_12_a_60');
+        elseif ($age > 60) return $container->getParameter('personne_plus_60');
     }
 }

@@ -7,34 +7,31 @@
 {% block ocbooking_body %} 
 
 {% for message in app.flashes('error') %}
-<div class="flash-error">
-    {{ message }}
-</div>
+    <div class="flash-error">
+        {{ message }}
+    </div>
 {% endfor %}
 
 <div class="recapitulatif_commande">
-
   <h2>Récapitulatif de commande :</h2>
-
   <p>Vous souhaitez réserver {{ totalVisitor }} billets d'entrée à la {{ ticketType }}, pour le {{ dateOfBooking|date('d/m/Y') }}.
       Votre facture est de {{ totalPrice }} € </p>
-
 </div>
 
-<form action="{{ path('order_checkout') }}" method="POST" id="payment-form">
-    <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_WYvpEHPHdIksCPWlOKjoGN3P"
-    data-email="{{ bookingEmail }}"
-    data-amount="{{ priceStripe }}"
-    data-name="Musée du Louvre"
-    data-description="Billet de réservation"
-    data-locale="auto"
-    data-currency="eur">
-  </script>
-
-</form>
-
+<div class="stripeForm">
+    <form action="{{ path('order_checkout') }}" method="POST" id="payment-form">
+        <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_WYvpEHPHdIksCPWlOKjoGN3P"
+            data-email="{{ bookingEmail }}"
+            data-amount="{{ priceStripe }}"
+            data-name="Musée du Louvre"
+            data-description="Billet de réservation"
+            data-locale="auto"
+            data-currency="eur">
+        </script>
+    </form>
+</div>
 
 {% endblock %}
 

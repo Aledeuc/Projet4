@@ -140,7 +140,7 @@ body
       margin-top: 50px;
   }
 
-  .saveButton, .addVisitor, .paymentButton, .stripe-button
+  .saveButton, .addVisitor, .paymentButton, .removeTag
   {
     font-family: Georgia, sans-serif;
     font-size: 20px;
@@ -164,6 +164,10 @@ body
     list-style: none;
   }
 
+  .visitorForm
+  {
+      width: 10%;
+  }
 
 /* Stripe */
 
@@ -219,7 +223,7 @@ body
     font-size: 1.3em;
     padding: 0.5em;
     margin-top: 35px;
-    left: 400px;
+    right: -400px;
 	width:300px;
     height:200px;
     border-color: black;
@@ -229,6 +233,18 @@ body
     
 
 
+.stripe-button
+{
+    font-family: Georgia, sans-serif !important;
+    font-size: 20px !important;
+    border: none !important;
+    -moz-border-radius:0px 0 !important;
+    -webkit-border-radius:0px 0 !important;
+    border-radius:0px 0 !important;
+    color: #FFFFFF !important; 
+    background-color: #000205 !important; 
+    border-color: #000205 !important;
+}
 
   /* footer */
 
@@ -237,4 +253,49 @@ body
     position: absolute;
     bottom: 0;
     display : table-row;
+}
+
+@media only screen and (max-width: 700px) {
+    .reseauxsociaux 
+    {
+        position:relative;
+        right: 138px;
+        bottom:150px;
+    }
+
+    .photomusee 
+    {
+        padding-top: 30px;
+        max-width:100%;
+        max-height:100%;
+    }
+
+    #bookingButton
+    {
+      text-align: center;
+      bottom: -255px;
+      right: 90px;
+    }
+
+    .visitorForm
+    {
+        width: 80%;
+    }
+
+    .recapitulatif_commande
+    {
+        position: relative;
+        font-size: 1em;
+        right: -23%;
+        width:300px;
+        height:200px;
+    }
+
+    .stripe-button-el
+    {
+        position: relative;
+        font-size: 1em;
+        bottom: -180px;
+        right: 15%;
+    }
 }

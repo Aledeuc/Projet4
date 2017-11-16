@@ -1,5 +1,4 @@
 <?php
-
 namespace OC\BookingBundle\Form;
 
 use BookingBundle\Entity\Bookingform;
@@ -12,48 +11,49 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-
 class BookingformType extends AbstractType
 {
-    
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('bookingDate',      DateType::class, array(
-                'label'    => 'Date de la visite',
-                'input' => 'datetime',
-                'format' => 'dd/MM/yyyy',
-                'widget' => 'single_text',
-                'html5' => false,
-                'attr' => ['class' => 'js-datepicker'],
-                ))
-            ->add('ticketType',      ChoiceType::class, array(
-                'label' =>  'Type de ticket',
-                'choices'  => array(
-                    'Journée' => 'full',
-                    'Demi-journée' => 'half',
-                )))
-            ->add('bookingemail',   TextType::class, array(
-                'label'    => 'Email'));
+        $builder->add('bookingDate', DateType::class , array(
+            'label' => 'Date de la visite',
+            'input' => 'datetime',
+            'format' => 'dd/MM/yyyy',
+            'widget' => 'single_text',
+            'html5' => false,
+            'attr' => ['class' => 'js-datepicker'],
+        ))
+            ->add('ticketType', ChoiceType::class , array(
+            'label' => 'Type de ticket',
+            'choices' => array(
+                'Journée' => 'full',
+                'Demi-journée' => 'half',
+            )
+        ))
+            ->add('bookingemail', TextType::class , array(
+            'label' => 'Email'
+        ));
 
-            $builder->add('visitors', CollectionType::class, array(
-                'entry_type' => VisitorType::class,
-                'entry_options' => array('label' => false),
-                'allow_add' => true,
-            ))
+        $builder->add('visitors', CollectionType::class , array(
+            'entry_type' => VisitorType::class ,
+            'entry_options' => array(
+                'label' => false
+            ) ,
+            'allow_add' => true,
+        ))
 
-           
-
-            ->add('save', SubmitType::class, array(
-                'label' => 'Réserver',
-                'attr' => array(
-                'class' =>  'saveButton',
-                )));
+            ->add('save', SubmitType::class , array(
+            'label' => 'Réserver',
+            'attr' => array(
+                'class' => 'saveButton',
+            )
+        ));
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -71,6 +71,5 @@ class BookingformType extends AbstractType
     {
         return 'oc_bookingbundle_bookingform';
     }
-
 
 }

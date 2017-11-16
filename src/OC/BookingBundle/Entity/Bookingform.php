@@ -1,11 +1,9 @@
 <?php
-
 namespace OC\BookingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
-
 
 /**
  * Bookingform
@@ -59,9 +57,9 @@ class Bookingform
 
     /** 
      *  @var string
-     * 
+     *
      * @ORM\Column (name="total_price", type="string", length=255)
-     */  
+     */
     private $totalPrice;
 
     /**
@@ -73,18 +71,17 @@ class Bookingform
 
     /**
      *  @var string
-     * 
+     *
      * @ORM\Column (name="order_number", type="string", length=255, nullable=true )
      */
     private $orderNumber = null;
     /**
      * @var Visitor
-     * 
+     *
      * @Assert\Valid()
      * @ORM\ManyToMany(targetEntity="OC\BookingBundle\Entity\Visitor",  cascade={"persist"})
      */
     private $visitors;
-
 
     /**
      * Constructor
@@ -221,7 +218,9 @@ class Bookingform
      */
     public function removeVisitor(\OC\BookingBundle\Entity\Visitor $visitor)
     {
-        $this->visitors->removeElement($visitor);
+        $this
+            ->visitors
+            ->removeElement($visitor);
     }
 
     /**
@@ -233,7 +232,6 @@ class Bookingform
     {
         return $this->visitors;
     }
-
 
     /**
      * Set totalPrice

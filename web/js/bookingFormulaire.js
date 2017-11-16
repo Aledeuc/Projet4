@@ -22,9 +22,10 @@ $(function() {
             var string = jQuery.datepicker.formatDate('d-m-yy', date);
             var isDisabled = ($.inArray(string, jourFerie) != -1);
             return [day != 0 && day!= 2 && !isDisabled];
-        }// impossible de séléctionner dimanche
+        }// impossible de séléctionner dimanche et mardi
         
     });  
+    
 
     // bloquer les réservations à la journée après 14h
     $( ".js-datepicker" ).change(function() {
@@ -78,7 +79,7 @@ $(function() {
         $collectionHolder.data('index', index + 1);
         var $newFormLi = $('<li></li>').append(newForm);
         $newLinkLi.before($newFormLi);
-        $newFormLi.append('<button href="#" class="removeTag">X</button>');
+        $newFormLi.append('<button href="#" class="removeTag">Annuler le visiteur</button>');
     
     
         $('.removeTag').click(function(e) 

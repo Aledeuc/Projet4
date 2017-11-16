@@ -24,12 +24,10 @@ class PaymentformController extends Controller
         $ticketType = $session->get('ticketType');
         $totalVisitor = $session->get('totalVisitor');
         $bookingEmail = $session->get('bookingEmail');
-		$priceStripe = $totalPrice * 100;
-		
+        $priceStripe = $totalPrice * 100;
         $repository = $this->getDoctrine()
             ->getRepository(Day::class);
-
-		$entityDay = $repository->findOneById($idDay);
+        $entityDay = $repository->findOneById($idDay);
         $dateOfBooking = $entityDay->getDate();
         return $this->render('OCBookingBundle:Paymentform:payment.html.twig', array(
             'totalPrice' => $totalPrice,
@@ -66,38 +64,40 @@ class PaymentformController extends Controller
                 "source" => $token,
                 "description" => "Paiement Stripe - OpenClassrooms Exemple"
             ));
-			
-			// generate commande number
-			function random_number(){
-			$caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-			$longueurMax = strlen($caracteres);
-			$chaineAleatoire = '';
-			for ($i = 0; $i < 10; $i++)
-			{
-			$chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
-			}
-				return $chaineAleatoire;
-			}	
 
-			$command_number = random_number();
-			// command check
+            // generate commande number
+            function random_number()
+            {
+                $caracteres = '0123456789abcdefghijklmnopqrstuvwxyz';
+                $longueurMax = strlen($caracteres);
+                $chaineAleatoire = '';
+                for ($i = 0;$i < 8;$i++)
+                {
+                    $chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1) ];
+                }
+                return $chaineAleatoire;
+            }
+
+            $command_number = random_number();
+            // command check
             $em = $this->getDoctrine()
                 ->getManager();
-			$bookingform->setValidatedOrder(true);
-			
-			// add command number on bookingform
-			$existing_order = $bookingform->getOrderNumber();
-			
-			if ( $existing_order == $command_number) {
-				$command_number = random_number();
-				$bookingform->setOrderNumber($command_number);
-			}
-			else
-			{
-				$bookingform->setOrderNumber($command_number);
-			}
+            $bookingform->setValidatedOrder(true);
 
-			// persist entity
+            // add command number on bookingform
+            $existing_order = $bookingform->getOrderNumber();
+
+            if ($existing_order == $command_number)
+            {
+                $command_number = random_number();
+                $bookingform->setOrderNumber($command_number);
+            }
+            else
+            {
+                $bookingform->setOrderNumber($command_number);
+            }
+
+            // persist entity
             $em->persist($bookingform);
             $em->flush();
             // send confirmation mail
@@ -108,19 +108,28 @@ class PaymentformController extends Controller
             $message->setFrom('alexhsave@gmail.com')
                 ->setTo($stripeEmail)->setBody($this->renderView('Emails/confirmation.html.twig', array(
                 'dateOfBooking' => $dateOfBooking,
-				'imageSrc' => $data,
-				'tableauNom' => $nom_visitors,
-				'numReservation' => $command_number,
-				'totalPrice' => $totalPrice,
+                'imageSrc' => $data,
+                'tableauNom' => $nom_visitors,
+                'numReservation' => $command_number,
+                'totalPrice' => $totalPrice,
             )) , 'text/html');
             $mailer->send($message);
-            $this->addFlash("success", "Votre réservation à bien été prise en compte");
             return $this->redirectToRoute("oc_booking_homepage");
         }
 
         catch(\Stripe\Error\Card $e)
         {
-            $this->addFlash("error", "Erreur lors du paiement, veuillez rÃ©essayer.");
+
+            $reservedPlace = $session->get('reservedPlace');
+            $totalVisitor = $session->get('totalVisitor');
+            $entityDay = $repository->findOneById($idDay);
+
+            $initial_place = $reservedPlace - $totalVisitor;
+            $entityDay->setPlace($initial_place);
+            $em->persist($entityDay);
+            $em->flush();
+
+            $this->addFlash("error", "Erreur lors du paiement, veuillez réessayer.");
             return $this->redirectToRoute("oc_payment_form");
 
             // The card has been declined
