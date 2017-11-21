@@ -56,6 +56,7 @@ class Visitor
      */
     private $reducedPrice;
 
+
     /**
      * Get id
      *

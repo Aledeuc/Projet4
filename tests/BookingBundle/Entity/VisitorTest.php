@@ -3,14 +3,23 @@
 namespace Tests\BookingBundle\Entity;
 
 use OC\BookingBundle\Entity\Visitor;
-use PHPUnit\Framework\TestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class VisitorTest extends TestCase
+class VisitorTest extends WebTestCase
 {
     public function testcomputReducPrice()
     {
-        $visitor = new Visitor('1', 'Bond', 'James', '1989-06-10', 'France', 'False');
-        $result = $visitor->computReducPrice();
+        $date = new \DateTime('1989-06-10');
+        $visitor = new Visitor();
+        $visitor->setName('Bond');
+        $visitor->setFirstname('James');
+        $visitor->setBirthdate($date);
+        $visitor->setCountry('France');
+        $visitor->setReducedPrice(False);
+
+        $client=static::createClient();
+        $container = $client->getContainer();
+        $result = $visitor->computReducPrice($container);
         $this->assertSame(16, $result);
     }
 }
