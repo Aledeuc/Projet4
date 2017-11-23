@@ -30,6 +30,8 @@ class VisitorType extends AbstractType
             ->add('birthdate', BirthdayType::class , array(
             'label' => 'Date de naissance',
             'format' => 'dd MM yyyy',
+            'attr'   =>  array(
+                'class'   => 'visitorForm')
         ))
             ->add('country', TextType::class , array(
             'label' => 'Pays',
